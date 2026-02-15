@@ -1,229 +1,549 @@
-herepython3 - << 'PYEOF'
-remaining = '''-height:1;margin-bottom:16px">
-        <span style="background:linear-gradient(135deg,var(--t1),var(--t2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Gulf-Native.</span>
-        <span style="font-family:var(--fi);background:linear-gradient(135deg,var(--g),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.15em"> Globally Ready.</span>
-      </h2>
-      <p style="font-size:17px;color:var(--t2);max-width:580px;margin:0 auto;line-height:1.9;font-weight:300">Engineered for Gulf culture. Deployed with international standards. Every payment method Gulf consumers trust — live and certified.</p>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Fahd Store — Royal E-Commerce Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Outfit:wght@200;300;400;500;600;700&family=Italianno&display=swap" rel="stylesheet"/>
+<style>
+:root{--g:#C9A84C;--g2:#E8C87A;--g3:#F5E6C0;--ink:#05080F;--ink2:#080D17;--t1:#F2E8D0;--t2:#B8A882;--t3:#6B5F45;--ok:#27AE60;--wa:#25D366;--fh:'Cinzel',serif;--fb:'Outfit',sans-serif;--fi:'Italianno',cursive}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--ink);color:var(--t1);overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--ink)}::-webkit-scrollbar-thumb{background:linear-gradient(var(--g),var(--g2));border-radius:2px}
 
-    <div class="marquee-wrap">
-      <div class="marquee-track">
-        <div class="m-pill">💳 Mada</div><div class="m-pill">📱 STC Pay</div><div class="m-pill">🍎 Apple Pay</div><div class="m-pill">🔄 Tabby</div><div class="m-pill">✨ Tamara</div><div class="m-pill">💰 Visa</div><div class="m-pill">💳 Mastercard</div><div class="m-pill">🌍 PayPal</div><div class="m-pill">📜 ZATCA e-Invoice</div><div class="m-pill">🏦 Bank Transfer</div>
-        <div class="m-pill">💳 Mada</div><div class="m-pill">📱 STC Pay</div><div class="m-pill">🍎 Apple Pay</div><div class="m-pill">🔄 Tabby</div><div class="m-pill">✨ Tamara</div><div class="m-pill">💰 Visa</div><div class="m-pill">💳 Mastercard</div><div class="m-pill">🌍 PayPal</div><div class="m-pill">📜 ZATCA e-Invoice</div><div class="m-pill">🏦 Bank Transfer</div>
+/* CURSOR */
+#cur{position:fixed;width:9px;height:9px;background:var(--g);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .25s,height .25s}
+#cur2{position:fixed;width:38px;height:38px;border:1px solid rgba(201,168,76,.4);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%)}
+
+/* FIXED BG */
+.bg-fixed{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.grain{position:absolute;inset:-50%;width:200%;height:200%;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.03;animation:grain 8s steps(10) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,3%)}80%{transform:translate(3%,-2%)}100%{transform:translate(0,0)}}
+.orb{position:absolute;border-radius:50%;filter:blur(130px);animation:od 28s infinite ease-in-out}
+.o1{width:900px;height:900px;background:radial-gradient(circle,rgba(201,168,76,.1),transparent 70%);top:-400px;right:-400px}
+.o2{width:600px;height:600px;background:radial-gradient(circle,rgba(20,60,140,.12),transparent 70%);bottom:5%;left:-200px;animation-delay:-13s}
+.o3{width:400px;height:400px;background:radial-gradient(circle,rgba(201,168,76,.06),transparent 70%);top:40%;left:40%;animation-delay:-22s}
+@keyframes od{0%,100%{transform:translate(0,0)scale(1)}33%{transform:translate(50px,-70px)scale(1.07)}66%{transform:translate(-30px,50px)scale(.93)}}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.022) 1px,transparent 1px);background-size:88px 88px}
+.vignette{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,transparent,rgba(5,8,15,.75) 100%)}
+
+/* CANVAS */
+#ptc{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+/* PAGE */
+.page{position:relative;z-index:1}
+
+/* ANIMATIONS */
+@keyframes shimT{to{background-position:250% center}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes rb{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.18)}50%{box-shadow:0 0 0 22px rgba(201,168,76,0)}}
+@keyframes float{0%,100%{transform:translateY(0)rotate(-1.5deg)}50%{transform:translateY(-22px)rotate(1.5deg)}}
+@keyframes fc{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes bshineA{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes panIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lineGlow{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes bgSlide{to{background-position:200% center}}
+@keyframes scrollRoll{0%{top:-30px;opacity:0}40%{opacity:1}80%{opacity:1}100%{top:70px;opacity:0}}
+@keyframes heroRingIn{from{opacity:0;transform:scale(.3)rotate(-180deg)}to{opacity:1;transform:scale(1)rotate(0)}}
+@keyframes titleIn{from{opacity:0;transform:translateY(55px)}to{opacity:1;transform:translateY(0)}}
+@keyframes subtitleIn{from{opacity:0;letter-spacing:20px}to{opacity:1;letter-spacing:4px}}
+@keyframes badgeIn{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes devFloat{0%,100%{transform:translateY(0)rotate(-1.5deg)}50%{transform:translateY(-22px)rotate(1.5deg)}}
+@keyframes devGlow{0%,100%{opacity:.7;transform:translate(-50%,-50%)scale(1)}50%{opacity:1;transform:translate(-50%,-50%)scale(1.1)}}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+.rvl{opacity:0;transform:translateX(-50px);transition:opacity .9s ease,transform .9s ease}
+.rvl.in{opacity:1;transform:translateX(0)}
+.rvr{opacity:0;transform:translateX(50px);transition:opacity .9s ease,transform .9s ease}
+.rvr.in{opacity:1;transform:translateX(0)}
+.rv2{opacity:0;transform:translateY(40px)scale(.97);transition:opacity .9s ease,transform .9s ease}
+.rv2.in{opacity:1;transform:translateY(0)scale(1)}
+
+/* ══════════════════════════
+   HERO
+══════════════════════════ */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 120px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),var(--g2),var(--g),transparent);animation:lineGlow 4s ease-in-out infinite}
+
+.hr-wrap{position:relative;margin-bottom:36px;animation:heroRingIn 1.4s cubic-bezier(.16,1,.3,1) both}
+.hr{width:140px;height:140px;border-radius:50%;border:1px solid rgba(201,168,76,.28);display:flex;align-items:center;justify-content:center;position:relative;animation:rb 4s ease-in-out infinite}
+.hr::before{content:'';position:absolute;width:172px;height:172px;border-radius:50%;border:1px dashed rgba(201,168,76,.1);animation:spin 25s linear infinite}
+.hr::after{content:'';position:absolute;width:204px;height:204px;border-radius:50%;border:1px solid rgba(201,168,76,.05);animation:spin 40s linear infinite reverse}
+.hr-em{font-family:var(--fh);font-size:42px;font-weight:900;background:linear-gradient(135deg,var(--g),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;z-index:1}
+
+.lb{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.18);color:var(--g2);font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:8px 20px;border-radius:50px;margin-bottom:28px;animation:badgeIn .8s .3s both}
+.ld{width:7px;height:7px;background:var(--g);border-radius:50%;animation:pulse 2s infinite}
+
+.htw{margin-bottom:18px;animation:titleIn 1s .5s both}
+.hm{display:block;font-family:var(--fh);font-size:clamp(54px,10vw,138px);font-weight:900;line-height:.95;letter-spacing:-2px;background:linear-gradient(135deg,var(--t1) 0%,var(--g3) 35%,var(--g) 60%,var(--g2) 80%,var(--t1) 100%);background-size:250%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimT 5s linear infinite}
+.hs{display:block;font-family:var(--fi);font-size:clamp(34px,5vw,68px);color:var(--g);letter-spacing:4px;line-height:1.2;animation:subtitleIn 1s .7s both;text-shadow:0 0 60px rgba(201,168,76,.3)}
+
+.htag{font-size:clamp(14px,1.8vw,19px);color:var(--t2);font-weight:300;max-width:700px;margin:0 auto 50px;line-height:1.9;letter-spacing:.5px;animation:fadeUp .8s .9s both}
+.htag strong{color:var(--g2);font-weight:600}
+
+.hp{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:54px;animation:fadeUp .8s 1.1s both}
+.pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.14);border-radius:50px;padding:10px 20px;font-size:13px;font-weight:500;color:var(--t2);transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.pill::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.08),transparent);opacity:0;transition:opacity .3s}
+.pill:hover{border-color:rgba(201,168,76,.4);color:var(--t1);transform:translateY(-3px)}
+.pill:hover::before{opacity:1}
+.pv{font-weight:700;color:var(--g);font-family:var(--fh);font-size:12px}
+
+.hca{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s 1.3s both}
+.cg{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--g),var(--g2),var(--g));background-size:200%;color:#05080F;border:none;border-radius:14px;padding:16px 40px;font-size:14px;font-weight:700;font-family:var(--fh);letter-spacing:.5px;cursor:none;transition:all .4s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden;text-decoration:none;animation:bgSlide 4s linear infinite}
+.cg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-100%);transition:transform .6s}
+.cg:hover::after{transform:translateX(100%)}
+.cg:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(201,168,76,.45)}
+.cw{display:inline-flex;align-items:center;gap:10px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.3);color:#25D366;border-radius:14px;padding:16px 40px;font-size:14px;font-weight:600;cursor:none;transition:all .4s cubic-bezier(.16,1,.3,1);text-decoration:none}
+.cw:hover{background:rgba(37,211,102,.15);border-color:#25D366;transform:translateY(-4px);box-shadow:0 20px 50px rgba(37,211,102,.2)}
+
+.si{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeUp .8s 1.6s both}
+.si span{font-size:9px;letter-spacing:4px;color:var(--t3);text-transform:uppercase}
+.st{width:1px;height:70px;background:linear-gradient(var(--g),transparent);position:relative;overflow:hidden}
+.so{width:1px;height:30px;background:linear-gradient(var(--g2),var(--g));position:absolute;top:-30px;animation:scrollRoll 2s ease-in-out infinite}
+
+/* ══════════════════════════
+   LAYOUT
+══════════════════════════ */
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+.sep{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.25),transparent);position:relative;z-index:1}
+
+.sec-eye{display:inline-flex;align-items:center;gap:12px;font-size:10px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--g);margin-bottom:18px}
+.sec-eye::before{content:'';display:inline-block;width:36px;height:1px;background:linear-gradient(90deg,transparent,var(--g))}
+.sec-eye::after{content:'';display:inline-block;width:36px;height:1px;background:linear-gradient(90deg,var(--g),transparent)}
+.sec-eye.center{justify-content:center}
+.sec-eye.center::before,.sec-eye.center::after{content:none}
+.sec-eye.center{gap:0}
+.sec-eye.center::before{display:inline-block;width:36px;height:1px;background:linear-gradient(90deg,transparent,var(--g));content:'';margin-right:12px}
+.sec-eye.center::after{display:inline-block;width:36px;height:1px;background:linear-gradient(90deg,var(--g),transparent);content:'';margin-left:12px}
+
+.sh2{font-family:var(--fh);font-size:clamp(38px,6vw,88px);font-weight:900;line-height:1;margin-bottom:16px}
+.sh2 .pl{background:linear-gradient(135deg,var(--t1),var(--t2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sh2 .gl{font-family:var(--fi);background:linear-gradient(135deg,var(--g),var(--g2),var(--g));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimT 4s linear infinite;font-size:1.15em}
+.sp{font-size:17px;color:var(--t2);max-width:620px;margin:0 auto;line-height:1.9;font-weight:300}
+.sp strong{color:var(--g2);font-weight:600}
+
+/* ══════════════════════════
+   SECTION 1: OVERVIEW
+══════════════════════════ */
+.ov{padding:130px 0;position:relative}
+.ov::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)}
+
+.ov-grid{display:grid;grid-template-columns:1fr 460px;gap:80px;align-items:center;margin-bottom:110px}
+
+.bf{display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-bottom:1px solid rgba(201,168,76,.08);transition:all .4s cubic-bezier(.16,1,.3,1)}
+.bf:first-child{border-top:1px solid rgba(201,168,76,.08)}
+.bf:hover{padding-left:8px}
+.bf-ico{width:52px;height:52px;flex-shrink:0;background:linear-gradient(135deg,rgba(201,168,76,.13),rgba(201,168,76,.03));border:1px solid rgba(201,168,76,.2);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.bf:hover .bf-ico{box-shadow:0 0 30px rgba(201,168,76,.22)}
+.bf h4{font-size:17px;font-weight:700;color:var(--t1);margin-bottom:6px;font-family:var(--fh);letter-spacing:.3px}
+.bf p{font-size:14px;color:var(--t2);line-height:1.7}
+.tag{display:inline-block;margin-top:8px;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.15);color:var(--g);font-size:9px;font-weight:700;letter-spacing:2px;padding:3px 10px;border-radius:20px;text-transform:uppercase}
+
+/* DEVICE */
+.dv-wrap{position:relative;display:flex;justify-content:center}
+.dv-glow{position:absolute;width:380px;height:380px;background:radial-gradient(circle,rgba(201,168,76,.12),transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;animation:devGlow 4s ease-in-out infinite}
+.dv{width:268px;height:516px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(201,168,76,.22);border-radius:40px;position:relative;overflow:hidden;box-shadow:0 60px 100px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.05);animation:devFloat 7s ease-in-out infinite}
+.dn{width:88px;height:25px;background:var(--ink);border-radius:0 0 18px 18px;margin:0 auto;position:relative;z-index:3}
+.dsc{padding:6px 10px 10px;height:calc(100% - 25px);overflow:hidden}
+.dsh{display:flex;align-items:center;justify-content:space-between;padding:7px 4px;margin-bottom:8px;border-bottom:1px solid rgba(201,168,76,.1)}
+.dslo{font-family:var(--fh);font-size:11px;font-weight:700;color:var(--g)}
+.dsb{width:100%;height:86px;background:linear-gradient(135deg,var(--g) 0%,#7B5A10 100%);border-radius:12px;margin-bottom:9px;display:flex;flex-direction:column;justify-content:center;padding:12px;position:relative;overflow:hidden}
+.dsb::after{content:'';position:absolute;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,.1);right:-15px;top:-25px}
+.dsbt{font-size:10px;font-weight:700;color:#080D17;line-height:1.2}
+.dsbs{font-size:8px;color:rgba(0,0,0,.5);margin-top:2px}
+.dcat{display:flex;gap:6px;margin-bottom:9px;overflow:hidden}
+.dc{display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0;width:42px}
+.dci{width:36px;height:36px;background:rgba(201,168,76,.09);border:1px solid rgba(201,168,76,.18);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.dcl{font-size:6px;color:var(--t3);text-align:center}
+.dpg{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.dpc{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.1);border-radius:10px;overflow:hidden}
+.dpi{height:52px;background:linear-gradient(135deg,rgba(201,168,76,.14),rgba(201,168,76,.03));display:flex;align-items:center;justify-content:center;font-size:22px}
+.dpif{padding:5px 6px}
+.dpn{font-size:7px;color:var(--t2)}
+.dpp{font-size:9px;color:var(--g);font-weight:700;font-family:var(--fh)}
+.dpo{font-size:7px;color:var(--t3);text-decoration:line-through}
+
+.dfl{position:absolute;background:rgba(8,13,23,.92);backdrop-filter:blur(12px);border:1px solid rgba(201,168,76,.2);border-radius:12px;padding:10px 14px;box-shadow:0 20px 40px rgba(0,0,0,.5);white-space:nowrap}
+.df1{top:20%;left:-100px;animation:fc 5s ease-in-out infinite}
+.df2{bottom:25%;right:-96px;animation:fc 5s ease-in-out infinite 2.5s}
+.df-i{font-size:16px;margin-bottom:3px}
+.df-t{font-size:11px;font-weight:700;color:var(--g)}
+.df-s{font-size:10px;color:var(--t3)}
+
+/* STAT STRIP */
+.ss{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(201,168,76,.12);border-radius:24px;overflow:hidden;background:rgba(255,255,255,.015);position:relative}
+.ss::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),var(--g2),var(--g),transparent)}
+.sb{padding:38px 28px;text-align:center;border-right:1px solid rgba(201,168,76,.08);position:relative;overflow:hidden;transition:background .4s}
+.sb:last-child{border-right:none}
+.sb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 80%,rgba(201,168,76,.07),transparent 60%);opacity:0;transition:opacity .4s}
+.sb:hover::after{opacity:1}
+.sn{font-family:var(--fh);font-size:50px;font-weight:900;line-height:1;display:block;margin-bottom:6px;background:linear-gradient(135deg,var(--g),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sl{font-size:12px;color:var(--t2);font-weight:500;letter-spacing:.5px}
+.ssb{font-size:10px;color:var(--t3);margin-top:3px}
+.suf{font-family:var(--fh);font-size:32px;font-weight:900;background:linear-gradient(135deg,var(--g),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ══════════════════════════
+   SECTION 2: FEATURES
+══════════════════════════ */
+.feat{padding:130px 0;position:relative;background:linear-gradient(180deg,transparent,rgba(8,13,23,.8),transparent)}
+.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)}
+
+.fb-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:80px}
+.fb{background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(201,168,76,.1);border-radius:22px;padding:36px;position:relative;overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1)}
+.fb::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent);transform:scaleX(0);transform-origin:center;transition:transform .5s ease}
+.fb:hover{border-color:rgba(201,168,76,.32);transform:translateY(-6px);box-shadow:0 32px 64px rgba(0,0,0,.35),0 0 50px rgba(201,168,76,.06)}
+.fb:hover::before{transform:scaleX(1)}
+.fb.c8{grid-column:span 8}.fb.c4{grid-column:span 4}.fb.c6{grid-column:span 6}.fb.c12{grid-column:span 12}
+.fb-i{width:62px;height:62px;background:linear-gradient(135deg,rgba(201,168,76,.14),rgba(201,168,76,.04));border:1px solid rgba(201,168,76,.2);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:22px;transition:all .4s cubic-bezier(.16,1,.3,1)}
+.fb:hover .fb-i{transform:scale(1.1)rotate(8deg);box-shadow:0 0 36px rgba(201,168,76,.25)}
+.fb-t{font-size:20px;font-weight:700;color:var(--t1);margin-bottom:10px;font-family:var(--fh);letter-spacing:.2px}
+.fb-d{font-size:14px;color:var(--t2);line-height:1.75}
+.fb-tag{display:inline-flex;align-items:center;gap:6px;margin-top:18px;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.18);color:var(--g);font-size:10px;font-weight:600;letter-spacing:1.5px;padding:5px 12px;border-radius:20px;text-transform:uppercase}
+.fb.del{background:linear-gradient(135deg,rgba(201,168,76,.09),rgba(201,168,76,.02));border-color:rgba(201,168,76,.2)}
+
+/* delivery bars */
+.dbars{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.dbar{display:flex;align-items:center;gap:12px}
+.dbl{font-size:12px;color:var(--t2);width:90px;flex-shrink:0}
+.dbt{flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+.dbf{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--g),var(--g2));position:relative;overflow:hidden;width:0;transition:width 1.2s ease}
+.dbf::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);animation:bshineA 2s ease-in-out infinite}
+.dbv{font-size:11px;font-weight:700;color:var(--g);font-family:var(--fh);width:65px;text-align:right}
+
+/* payment rows */
+.pst{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.pr{display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.2);border:1px solid rgba(201,168,76,.08);border-radius:10px;padding:10px 14px;transition:.3s}
+.pr:hover{border-color:rgba(201,168,76,.25);background:rgba(201,168,76,.04)}
+.pr-i{font-size:18px}
+.pr-n{font-size:12px;font-weight:700;color:var(--t1)}
+.pr-d{font-size:10px;color:var(--t3)}
+.pr-s{font-size:9px;color:var(--ok);font-weight:700;margin-inline-start:auto}
+
+/* AI visual */
+.aiv{margin-top:18px;background:rgba(0,0,0,.2);border-radius:12px;padding:16px;border:1px solid rgba(201,168,76,.08)}
+.ai-l{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:12px}
+.ai-d{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.ai-lb{color:var(--t2)}
+.ai-v{color:var(--g);font-weight:700;margin-inline-start:auto;font-family:var(--fh)}
+
+/* loyalty */
+.loy{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tier{padding:14px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,.06);transition:all .3s}
+.tier:hover{transform:translateY(-3px)}
+.tier.bz{background:linear-gradient(135deg,rgba(139,90,43,.14),rgba(139,90,43,.03));border-color:rgba(139,90,43,.2)}
+.tier.sv{background:linear-gradient(135deg,rgba(180,180,180,.11),rgba(180,180,180,.03));border-color:rgba(180,180,180,.2)}
+.tier.gd{background:linear-gradient(135deg,rgba(201,168,76,.18),rgba(201,168,76,.05));border-color:rgba(201,168,76,.3)}
+.tier.pl{background:linear-gradient(135deg,rgba(150,220,255,.1),rgba(150,220,255,.02));border-color:rgba(150,220,255,.2)}
+.tier-i{font-size:20px;margin-bottom:5px}
+.tier-n{font-size:11px;font-weight:700;color:var(--t1)}
+
+/* ══════════════════════════
+   SECTION 3: ECOSYSTEM
+══════════════════════════ */
+.eco{padding:130px 0;position:relative}
+.eco::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)}
+
+.eco-tabs{display:flex;background:rgba(255,255,255,.02);border:1px solid rgba(201,168,76,.12);border-radius:18px;padding:6px;gap:6px;max-width:820px;margin:50px auto 36px}
+.et{flex:1;padding:15px 18px;text-align:center;font-size:13px;font-weight:600;color:var(--t3);border-radius:12px;cursor:none;transition:.3s;font-family:var(--fh);letter-spacing:.3px}
+.et.on{background:linear-gradient(135deg,rgba(201,168,76,.18),rgba(201,168,76,.06));color:var(--g);border:1px solid rgba(201,168,76,.25);box-shadow:0 0 30px rgba(201,168,76,.07)}
+.et:not(.on):hover{color:var(--t1);background:rgba(255,255,255,.03)}
+
+.ep{display:none;grid-template-columns:repeat(2,1fr);gap:18px;animation:panIn .5s ease both;max-width:1100px;margin:0 auto}
+.ep.on{display:grid}
+.epc{background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(201,168,76,.1);border-radius:18px;padding:28px;transition:.4s}
+.epc:hover{border-color:rgba(201,168,76,.3);transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.epc-i{font-size:30px;margin-bottom:14px}
+.epc-t{font-size:17px;font-weight:700;color:var(--t1);margin-bottom:8px;font-family:var(--fh)}
+.epc-d{font-size:13px;color:var(--t2);line-height:1.7;margin-bottom:14px}
+.epl{list-style:none;display:flex;flex-direction:column;gap:7px}
+.epl li{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--t2)}
+.epl li::before{content:'→';color:var(--g);font-size:10px;flex-shrink:0}
+
+/* ══════════════════════════
+   SECTION 4: JOURNEYS
+══════════════════════════ */
+.jrn{padding:130px 0;position:relative}
+.jrn::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)}
+
+.jg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px}
+.jc{border-radius:22px;overflow:hidden;border:1px solid rgba(201,168,76,.12);transition:all .5s cubic-bezier(.16,1,.3,1)}
+.jc:hover{border-color:rgba(201,168,76,.35);transform:translateY(-10px);box-shadow:0 50px 80px rgba(0,0,0,.5),0 0 60px rgba(201,168,76,.07)}
+.jh{padding:34px 30px 26px;background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.01));border-bottom:1px solid rgba(201,168,76,.08);position:relative;overflow:hidden}
+.jh::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--g),transparent)}
+.j-ico{font-size:44px;margin-bottom:12px;display:block}
+.j-ti{font-family:var(--fh);font-size:22px;font-weight:700;color:var(--t1);margin-bottom:5px}
+.j-ro{font-size:11px;color:var(--g);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.jsteps{padding:22px 30px 30px;background:rgba(0,0,0,.15)}
+.jst{display:flex;gap:14px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:padding .3s}
+.jst:last-child{border-bottom:none}
+.jc:hover .jst{padding-left:4px}
+.jsn{width:25px;height:25px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,var(--g),var(--g2));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#05080F;margin-top:1px}
+.jst-t{font-size:13px;color:var(--t2);line-height:1.6}
+
+/* ══════════════════════════
+   SECTION 5: MARKET
+══════════════════════════ */
+.mkt{padding:110px 0;position:relative}
+.mkt::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)}
+
+.mqw{position:relative;overflow:hidden;padding:16px 0;margin:48px 0}
+.mqw::before,.mqw::after{content:'';position:absolute;top:0;bottom:0;width:200px;z-index:2}
+.mqw::before{left:0;background:linear-gradient(90deg,var(--ink),transparent)}
+.mqw::after{right:0;background:linear-gradient(270deg,var(--ink),transparent)}
+.mq-track{display:flex;gap:14px;width:max-content;animation:mq 18s linear infinite}
+.mp{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.025);border:1px solid rgba(201,168,76,.14);border-radius:50px;padding:10px 22px;font-size:13px;font-weight:600;color:var(--t1);white-space:nowrap;transition:.3s}
+.mp:hover{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.06)}
+
+.mm{max-width:900px;margin:48px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mc{background:rgba(255,255,255,.02);border:1px solid rgba(201,168,76,.1);border-radius:16px;padding:24px 16px;text-align:center;transition:.4s}
+.mc:hover{border-color:rgba(201,168,76,.3);transform:translateY(-5px);background:rgba(201,168,76,.04)}
+.mc-f{font-size:36px;margin-bottom:10px}
+.mc-n{font-size:13px;font-weight:700;color:var(--t1);margin-bottom:4px;font-family:var(--fh)}
+.mc-s{font-size:10px;font-weight:600}.mc-s.lv{color:var(--ok)}.mc-s.ex{color:var(--g)}.mc-s.rd{color:var(--t3)}
+
+/* ══════════════════════════
+   FINAL CTA
+══════════════════════════ */
+.fnl{padding:130px 24px;text-align:center;position:relative}
+.fnl::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)}
+.cb{max-width:820px;margin:0 auto;background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(201,168,76,.18);border-radius:32px;padding:90px 70px;position:relative;overflow:hidden}
+.cb::before{content:'';position:absolute;top:-1px;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,var(--g),var(--g2),var(--g),transparent)}
+.cb::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,168,76,.09),transparent);pointer-events:none}
+.ce{display:inline-block;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.22);color:var(--g);font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:7px 20px;border-radius:50px;margin-bottom:28px;position:relative;z-index:1}
+.cb h2{font-family:var(--fh);font-size:clamp(30px,5vw,62px);font-weight:900;line-height:1.05;margin-bottom:18px;position:relative;z-index:1}
+.cb h2 .gc{background:linear-gradient(135deg,var(--g),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cb p{font-size:17px;color:var(--t2);max-width:560px;margin:0 auto 44px;line-height:1.9;font-weight:300;position:relative;z-index:1}
+.cbtns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.ccts{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;margin-top:36px;position:relative;z-index:1}
+.cct{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t3)}
+.cct a{color:var(--g2);text-decoration:none;transition:.3s}
+.cct a:hover{color:var(--g)}
+
+/* FOOTER */
+.foot{border-top:1px solid rgba(201,168,76,.08);padding:26px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;position:relative;z-index:1}
+.fl{font-family:var(--fh);font-size:22px;font-weight:700;background:linear-gradient(135deg,var(--g),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ft{font-size:11px;color:var(--t3);letter-spacing:.5px}
+.fv{font-size:11px;color:var(--t4,#2A2014)}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.ov-grid{grid-template-columns:1fr;gap:50px}.dv-wrap{order:-1}.fb.c8,.fb.c4,.fb.c6,.fb.c12{grid-column:span 12}.fb-grid{grid-template-columns:1fr}.ss{grid-template-columns:1fr 1fr}.sb:nth-child(2){border-right:none}}
+@media(max-width:900px){.jg{grid-template-columns:1fr}.ep.on{grid-template-columns:1fr}.mm{grid-template-columns:1fr 1fr}.cb{padding:60px 30px}}
+@media(max-width:640px){.hp{gap:6px}.pill{padding:8px 14px;font-size:12px}.ss{grid-template-columns:1fr}.sb{border-right:none;border-bottom:1px solid rgba(201,168,76,.08)}.df1,.df2{display:none}.eco-tabs{flex-wrap:wrap}.loy{grid-template-columns:1fr 1fr}.foot{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="cur2"></div>
+<div class="bg-fixed"><div class="grain"></div><div class="grid-bg"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="vignette"></div></div>
+<canvas id="ptc"></canvas>
+<div class="page">
+
+<!-- ══════════ HERO ══════════ -->
+<section class="hero">
+  <div class="hr-wrap"><div class="hr"><div class="hr-em">ف</div></div></div>
+  <div class="lb"><div class="ld"></div>Gulf's Premier Luxury E-Commerce Platform</div>
+  <div class="htw"><span class="hm">FAHD STORE</span><span class="hs">Royal Commerce</span></div>
+  <p class="htag">A <strong>luxury multi-vendor marketplace</strong> engineered for the Gulf region — where royal aesthetics meet enterprise-grade technology. Built for <strong>Saudi Arabia</strong>, scaled for the world.</p>
+  <div class="hp">
+    <div class="pill"><span>🇸🇦</span> <span class="pv">Saudi Arabia</span> First</div>
+    <div class="pill"><span>🌐</span> <span class="pv">AR / EN</span> Bilingual RTL/LTR</div>
+    <div class="pill"><span>📱</span> <span class="pv">Mobile-First</span> PWA + Apps</div>
+    <div class="pill"><span>🤖</span> <span class="pv">AI-Powered</span> Smart Commerce</div>
+    <div class="pill"><span>⚡</span> <span class="pv">&lt;2s</span> Load Speed</div>
+    <div class="pill"><span>🔒</span> <span class="pv">PCI DSS</span> Certified</div>
+    <div class="pill"><span>📜</span> <span class="pv">ZATCA</span> Compliant</div>
+    <div class="pill"><span>👑</span> <span class="pv">99.9%</span> Uptime SLA</div>
+  </div>
+  <div class="hca">
+    <a href="https://moh222salah.github.io/cv" target="_blank" class="cg">💼 View Portfolio</a>
+    <a href="https://wa.me/201113903070" target="_blank" class="cw">💬 WhatsApp</a>
+  </div>
+  <div class="si"><span>Explore</span><div class="st"><div class="so"></div></div></div>
+</section>
+
+<div class="sep"></div>
+
+<!-- ══════════ SECTION 1: PLATFORM OVERVIEW ══════════ -->
+<section class="ov">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:90px" class="rv">
+      <div class="sec-eye center">Platform Overview</div>
+      <h2 class="sh2"><span class="pl">Built for the Gulf.</span><br/><span class="gl">Designed like Royalty.</span></h2>
+      <p class="sp">Fahd Store is a <strong>full-scale production-ready commerce ecosystem</strong> engineered from the ground up for Saudi Arabia and the wider Gulf region. Every element — from bilingual RTL/LTR interface to ZATCA-compliant invoicing — reflects the luxury standard Gulf consumers expect.</p>
+    </div>
+    <div class="ov-grid">
+      <div class="rvl">
+        <div class="bf"><div class="bf-ico">🚀</div><div><h4>Lightning 2-Hour Delivery</h4><p>Riyadh, Jeddah & Dammam covered in 2 hours. Same-day nationwide across the Kingdom — integrated with SMSA, Aramex & DHL with live GPS tracking at every step.</p><span class="tag">Logistics Engine</span></div></div>
+        <div class="bf"><div class="bf-ico">🛡️</div><div><h4>100% Authenticity Guaranteed</h4><p>Multi-layer product verification before every dispatch. Full refund guarantee — no questions, no friction, no compromise. Gulf consumers shop with absolute confidence.</p><span class="tag">Trust & Safety</span></div></div>
+        <div class="bf"><div class="bf-ico">💳</div><div><h4>Gulf-Native Payment Suite</h4><p>Mada, STC Pay, Apple Pay, Tabby & Tamara — every payment method Gulf consumers trust. ZATCA-compliant invoicing and PCI DSS certified end-to-end security.</p><span class="tag">Payment Infrastructure</span></div></div>
+        <div class="bf"><div class="bf-ico">🤖</div><div><h4>AI Intelligence Layer</h4><p>Personalized recommendation engine, visual photo search, AI chatbot 24/7, and predictive inventory management — trained on Gulf consumer behavior patterns.</p><span class="tag">Machine Learning</span></div></div>
+      </div>
+      <div class="dv-wrap rvr">
+        <div class="dv-glow"></div>
+        <div class="dfl df1"><div class="df-i">📦</div><div class="df-t">Order Dispatched!</div><div class="df-s">Arrives in 2 hours</div></div>
+        <div class="dfl df2"><div class="df-i">⭐</div><div class="df-t">Rating: 4.9 / 5</div><div class="df-s">50,000+ verified reviews</div></div>
+        <div class="dv">
+          <div class="dn"></div>
+          <div class="dsc">
+            <div class="dsh"><span class="dslo">فهد ستور | Fahd Store</span><span style="font-size:13px">🔔</span></div>
+            <div class="dsb"><div class="dsbt">Flash Deals ⚡ | عروض لحظية</div><div class="dsbs">Up to 70% off — Today only</div></div>
+            <div class="dcat">
+              <div class="dc"><div class="dci">📱</div><div class="dcl">Tech</div></div>
+              <div class="dc"><div class="dci">👗</div><div class="dcl">Fashion</div></div>
+              <div class="dc"><div class="dci">🏠</div><div class="dcl">Home</div></div>
+              <div class="dc"><div class="dci">💄</div><div class="dcl">Beauty</div></div>
+              <div class="dc"><div class="dci">🎮</div><div class="dcl">Gaming</div></div>
+            </div>
+            <div class="dpg">
+              <div class="dpc"><div class="dpi">⌚</div><div class="dpif"><div class="dpn">Apple Watch S9</div><div class="dpp">899 <span class="dpo">1,499</span></div></div></div>
+              <div class="dpc"><div class="dpi">🎧</div><div class="dpif"><div class="dpn">AirPods Pro 2</div><div class="dpp">649 <span class="dpo">999</span></div></div></div>
+              <div class="dpc"><div class="dpi">📱</div><div class="dpif"><div class="dpn">Galaxy S24 Ultra</div><div class="dpp">3,299</div></div></div>
+              <div class="dpc"><div class="dpi">💻</div><div class="dpif"><div class="dpn">MacBook Air M3</div><div class="dpp">4,899</div></div></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="market-map rv">
-      <div class="mc"><div class="mc-flag">🇸🇦</div><div class="mc-name">Saudi Arabia</div><div class="mc-status live">● Primary Market</div></div>
-      <div class="mc"><div class="mc-flag">🇦🇪</div><div class="mc-name">UAE</div><div class="mc-status exp">● Expanding</div></div>
-      <div class="mc"><div class="mc-flag">🇰🇼</div><div class="mc-name">Kuwait</div><div class="mc-status road">● On Roadmap</div></div>
-      <div class="mc"><div class="mc-flag">🇶🇦</div><div class="mc-name">Qatar</div><div class="mc-status road">● On Roadmap</div></div>
+    <div class="ss rv">
+      <div class="sb"><span class="sn" data-target="500" data-suf="K+">0</span><div class="sl">Authentic Products</div><div class="ssb">12 premium categories</div></div>
+      <div class="sb"><span class="sn" data-target="50" data-suf="K+">0</span><div class="sl">Happy Customers</div><div class="ssb">Saudi Arabia & Gulf</div></div>
+      <div class="sb"><span class="sn" data-target="2" data-suf=",847">0</span><div class="sl">Active Vendors</div><div class="ssb">98% satisfaction rate</div></div>
+      <div class="sb"><span class="sn" data-target="4" data-suf=".9 ⭐">0</span><div class="sl">Platform Rating</div><div class="ssb">50K+ verified reviews</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     FINAL CTA
-════════════════════════════════════════════════ -->
-<section class="final">
-  <div class="cta-box rv">
-    <div class="cta-eyebrow">🤝 Let\'s Build Together</div>
-    <h2>Ready to <span class="gc">Launch</span><br/>Your Gulf Platform?</h2>
-    <p>From concept to full production in 45–60 days. Full-stack, mobile-first, AI-powered, ZATCA-compliant. Let\'s build something the Gulf has never seen.</p>
-    <div class="cta-btns">
-      <a href="https://moh222salah.github.io/cv" target="_blank" class="cta-gold" style="font-size:14px;padding:16px 36px">💼 View Full Portfolio →</a>
-      <a href="https://wa.me/201113903070" target="_blank" class="cta-wa" style="font-size:14px;padding:16px 36px">💬 WhatsApp Direct →</a>
+<div class="sep"></div>
+
+<!-- ══════════ SECTION 2: FEATURES ══════════ -->
+<section class="feat">
+  <div class="wrap">
+    <div style="text-align:center" class="rv">
+      <div class="sec-eye center">Core Capabilities</div>
+      <h2 class="sh2"><span class="pl">Six Pillars of</span><br/><span class="gl">World-Class Commerce</span></h2>
+      <p class="sp">Enterprise-grade features engineered for the most competitive e-commerce experience in the Gulf — no compromises, no shortcuts, no half measures.</p>
     </div>
-    <div class="cta-contacts">
-      <div class="cta-c">💼 <a href="https://moh222salah.github.io/cv" target="_blank">moh222salah.github.io/cv</a></div>
-      <div class="cta-c">💬 <a href="https://wa.me/201113903070" target="_blank">wa.me/201113903070</a></div>
+    <div class="fb-grid">
+      <!-- DELIVERY BIG -->
+      <div class="fb del c8 rv">
+        <div class="fb-i">🚀</div>
+        <div class="fb-t">Lightning-Speed Delivery Network</div>
+        <div class="fb-d">2-hour delivery in Riyadh, Jeddah & Dammam. Same-day nationwide across the Kingdom. Integrated with SMSA, Aramex & DHL. Live GPS tracking at every step. Automated warehouse dispatch — zero manual intervention required.</div>
+        <div class="fb-tag">⚡ Logistics Infrastructure</div>
+        <div class="dbars">
+          <div class="dbar"><span class="dbl">Riyadh</span><div class="dbt"><div class="dbf" data-w="95%"></div></div><span class="dbv">2 Hours</span></div>
+          <div class="dbar"><span class="dbl">Jeddah</span><div class="dbt"><div class="dbf" data-w="90%"></div></div><span class="dbv">2 Hours</span></div>
+          <div class="dbar"><span class="dbl">Dammam</span><div class="dbt"><div class="dbf" data-w="88%"></div></div><span class="dbv">2 Hours</span></div>
+          <div class="dbar"><span class="dbl">Kingdom</span><div class="dbt"><div class="dbf" data-w="72%"></div></div><span class="dbv">Same Day</span></div>
+        </div>
+      </div>
+      <!-- AI -->
+      <div class="fb c4 rv">
+        <div class="fb-i">🤖</div>
+        <div class="fb-t">AI Intelligence Engine</div>
+        <div class="fb-d">Personalized recommendations, visual photo search, AI chatbot 24/7, and predictive inventory management — machine learning built for Gulf consumer behavior.</div>
+        <div class="fb-tag">🧠 Machine Learning</div>
+        <div class="aiv">
+          <div class="ai-l"><div class="ai-d" style="background:#E74C3C"></div><span class="ai-lb">Recommendation accuracy</span><span class="ai-v">94.7%</span></div>
+          <div class="ai-l"><div class="ai-d" style="background:var(--g)"></div><span class="ai-lb">Visual search match rate</span><span class="ai-v">89.2%</span></div>
+          <div class="ai-l"><div class="ai-d" style="background:var(--ok)"></div><span class="ai-lb">Chatbot resolution rate</span><span class="ai-v">91.5%</span></div>
+        </div>
+      </div>
+      <!-- PAYMENT TALL -->
+      <div class="fb c4 rv">
+        <div class="fb-i">💳</div>
+        <div class="fb-t">Gulf-Native Payment Suite</div>
+        <div class="fb-d">Every payment method Gulf consumers trust — built in, not bolted on. PCI DSS certified end-to-end encryption.</div>
+        <div class="fb-tag">🔐 PCI DSS Certified</div>
+        <div class="pst">
+          <div class="pr"><span class="pr-i">💳</span><div><div class="pr-n">Mada</div><div class="pr-d">Saudi debit network</div></div><span class="pr-s">● LIVE</span></div>
+          <div class="pr"><span class="pr-i">📱</span><div><div class="pr-n">STC Pay & Apple Pay</div><div class="pr-d">One-tap mobile</div></div><span class="pr-s">● LIVE</span></div>
+          <div class="pr"><span class="pr-i">🔄</span><div><div class="pr-n">Tabby & Tamara</div><div class="pr-d">Interest-free BNPL</div></div><span class="pr-s">● LIVE</span></div>
+          <div class="pr"><span class="pr-i">🌍</span><div><div class="pr-n">Visa / Mastercard / PayPal</div><div class="pr-d">International cards</div></div><span class="pr-s">● LIVE</span></div>
+          <div class="pr"><span class="pr-i">📜</span><div><div class="pr-n">ZATCA e-Invoicing</div><div class="pr-d">Saudi tax authority</div></div><span class="pr-s">● LIVE</span></div>
+        </div>
+      </div>
+      <!-- AUTHENTICITY -->
+      <div class="fb c4 rv">
+        <div class="fb-i">🛡️</div>
+        <div class="fb-t">100% Authenticity Guarantee</div>
+        <div class="fb-d">Multi-layer product verification before every dispatch. Blockchain-verified provenance for luxury goods. Full refund — no questions asked, no friction, zero exceptions.</div>
+        <div class="fb-tag">✅ Trust & Safety</div>
+      </div>
+      <!-- RETURNS -->
+      <div class="fb c4 rv">
+        <div class="fb-i">↩️</div>
+        <div class="fb-t">Effortless 30-Day Returns</div>
+        <div class="fb-d">Free doorstep pickup within 30 days. Automated refund in minutes. Zero friction — customers initiate returns inside the app in under 30 seconds.</div>
+        <div class="fb-tag">💎 Customer Experience</div>
+      </div>
+      <!-- LOYALTY WIDE -->
+      <div class="fb c12 rv">
+        <div style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center">
+          <div>
+            <div class="fb-i">👑</div>
+            <div class="fb-t">Royal Loyalty Program — Four Tiers of Prestige</div>
+            <div class="fb-d">Earn Golden Points on every purchase. Unlock exclusive perks, early-access deals, VIP events, and premium benefits as you ascend from Bronze to the coveted Platinum tier. The retention engine that converts first-time buyers into lifelong brand advocates.</div>
+            <div class="fb-tag">🏆 Retention & Engagement Engine</div>
+          </div>
+          <div class="loy">
+            <div class="tier bz"><div class="tier-i">🥉</div><div class="tier-n">Bronze</div></div>
+            <div class="tier sv"><div class="tier-i">🥈</div><div class="tier-n">Silver</div></div>
+            <div class="tier gd"><div class="tier-i">🥇</div><div class="tier-n">Gold</div></div>
+            <div class="tier pl"><div class="tier-i">💎</div><div class="tier-n">Platinum</div></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="foot-logo">Fahd Store</div>
-  <div class="foot-txt">Luxury Gulf E-Commerce Platform — Built with Royal Precision</div>
-  <div class="foot-v">v1.0.0 · 2025</div>
-</footer>
+<div class="sep"></div>
 
-</div><!-- /page -->
+<!-- ══════════ SECTION 3: ECOSYSTEM ══════════ -->
+<section class="eco">
+  <div class="wrap">
+    <div style="text-align:center" class="rv">
+      <div class="sec-eye center">Platform Architecture</div>
+      <h2 class="sh2"><span class="pl">Three Portals.</span><br/><span class="gl">One Ecosystem.</span></h2>
+      <p class="sp">Fahd Store is not just a storefront — it's a complete <strong>commerce operating system</strong>. Three distinct portals serve three distinct stakeholders, each purpose-built for their exact workflow and decision-making needs.</p>
+    </div>
+    <div class="eco-tabs rv">
+      <div class="et on" onclick="sw(0,this)">🛍️ Customer App</div>
+      <div class="et" onclick="sw(1,this)">🏪 Vendor Dashboard</div>
+      <div class="et" onclick="sw(2,this)">⚙️ Admin Panel</div>
+    </div>
+    <div id="ep0" class="ep on">
+      <div class="epc rv2"><div class="epc-i">🔍</div><div class="epc-t">Discovery & AI Search</div><div class="epc-d">AI-powered search, visual photo search, smart filters, and personalized collections curated for each shopper's taste and purchase history.</div><ul class="epl"><li>AI visual search engine</li><li>Real-time price alert system</li><li>Personalized homepage feed</li><li>12 curated product categories</li></ul></div>
+      <div class="epc rv2" style="transition-delay:.1s"><div class="epc-i">🛒</div><div class="epc-t">Shopping Experience</div><div class="epc-d">Seamless cart management, wishlist, size guides, product comparison, live flash deal countdowns, and frictionless one-click reorder for returning customers.</div><ul class="epl"><li>Multi-vendor checkout cart</li><li>Bundle & save promotions</li><li>Gift wrapping & custom notes</li><li>Product video previews</li></ul></div>
+      <div class="epc rv2" style="transition-delay:.2s"><div class="epc-i">📦</div><div class="epc-t">Order & Live Tracking</div><div class="epc-d">Real-time GPS tracking, push/SMS/email milestones, contactless delivery, photo confirmation, and complete order history with one-tap reorder.</div><ul class="epl"><li>Live driver GPS on map</li><li>Predicted delivery countdown</li><li>Photo delivery confirmation</li><li>Easy reorder with one tap</li></ul></div>
+      <div class="epc rv2" style="transition-delay:.3s"><div class="epc-i">💬</div><div class="epc-t">Support & Royal Loyalty</div><div class="epc-d">AI chatbot 24/7 with human escalation, multi-language support, review system, and the Royal Loyalty tier program with exclusive perks per tier.</div><ul class="epl"><li>AI + live agent escalation</li><li>Photo-based dispute resolution</li><li>Golden Points rewards system</li><li>Referral & affiliate rewards</li></ul></div>
+    </div>
+    <div id="ep1" class="ep">
+      <div class="epc rv2"><div class="epc-i">📊</div><div class="epc-t">Real-Time Analytics</div><div class="epc-d">Live revenue charts, conversion funnels, bestseller insights, customer demographics, and competitor benchmarking — all in one intelligent dashboard.</div><ul class="epl"><li>Daily / weekly / monthly P&L</li><li>Product performance heatmaps</li><li>Customer retention analytics</li><li>Return rate analysis tools</li></ul></div>
+      <div class="epc rv2" style="transition-delay:.1s"><div class="epc-i">📦</div><div class="epc-t">Smart Inventory Hub</div><div class="epc-d">Bulk upload via CSV/Excel, full variant management (size/color/SKU), low-stock alerts, automated reorder triggers, and multi-warehouse sync.</div><ul class="epl"><li>Multi-warehouse support</li><li>Barcode & QR scanning</li><li>Bulk price & stock editor</li><li>Automated restocking alerts</li></ul></div>
+      <div class="epc rv2" style="transition-delay:.2s"><div class="epc-i">💰</div><div class="epc-t">Financial Command Center</div><div class="epc-d">Daily settlement to bank or e-wallet, full ZATCA e-invoicing, VAT management, transparent commission breakdown, and instant withdrawal requests.</div><ul class="epl"><li>24-hour payout settlement</li><li>ZATCA auto-invoicing</li><li>Multi-currency support</li><li>Commission transparency report</li></ul></div>
+      <div class="epc rv2" style="transition-delay:.3s"><div class="epc-i">📣</div><div class="epc-t">Marketing Arsenal</div><div class="epc-d">Create flash deals, coupon codes, bundle offers, cross-promotions, and leverage platform-wide campaigns with AI-assisted audience targeting tools.</div><ul class="epl"><li>Sponsored product placement</li><li>Flash deal scheduling tool</li><li>Coupon code generator</li><li>Influencer collaboration hub</li></ul></div>
+    </div>
+    <div id="ep2" class="ep">
+      <div class="epc rv2"><div class="epc-i">🎛️</div><div class="epc-t">KPI Command Center</div><div class="epc-d">Real-time platform health: GMV, active users, order velocity, vendor performance scores, customer satisfaction, and AI-powered fraud detection alerts.</div><ul class="epl"><li>Live revenue dashboard</li><li>AI fraud detection engine</li><li>Server & uptime monitoring</li><li>Anomaly alert system</li></ul></div>
+      <div class="epc rv2" style="transition-delay:.1s"><div class="epc-i">👥</div><div class="epc-t">User & Vendor Governance</div><div class="epc-d">Role-based access, vendor onboarding with KYC verification, suspension management, tiered commission configuration, and full dispute resolution center.</div><ul class="epl"><li>Granular permission system</li><li>Automated KYC verification</li><li>Dispute resolution toolkit</li><li>Vendor performance scoring</li></ul></div>
+      <div class="epc rv2" style="transition-delay:.2s"><div class="epc-i">📋</div><div class="epc-t">Content Management System</div><div class="epc-d">Full CMS for banners, promo pages, push notifications, email campaigns, and homepage content — all manageable without touching a single line of code.</div><ul class="epl"><li>Visual banner builder</li><li>Push notification scheduler</li><li>SEO metadata full control</li><li>Multilingual content editor</li></ul></div>
+      <div class="epc rv2" style="transition-delay:.3s"><div class="epc-i">🔧</div><div class="epc-t">Platform Configuration</div><div class="epc-d">Payment gateway toggles, shipping rate matrix, tax rule engine, feature flags, and A/B testing controls — full authority over the entire platform operation.</div><ul class="epl"><li>Payment gateway enable/disable</li><li>Dynamic shipping rate rules</li><li>Feature flag management</li><li>A/B testing framework</li></ul></div>
+    </div>
+  </div>
+</section>
 
-<script>
-/* ─── CUSTOM CURSOR ─── */
-const cur = document.getElementById('cur');
-const cur2 = document.getElementById('cur2');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{
-  mx=e.clientX; my=e.clientY;
-  cur.style.left=mx+'px'; cur.style.top=my+'px';
-});
-(function ani(){
-  rx+=(mx-rx)*.1; ry+=(my-ry)*.1;
-  cur2.style.left=rx+'px'; cur2.style.top=ry+'px';
-  requestAnimationFrame(ani);
-})();
+<div class="sep"></div>
 
-/* ─── PARTICLES CANVAS ─── */
-(function(){
-  const c=document.getElementById('particles');
-  const ctx=c.getContext('2d');
-  let W,H,pts=[];
-  function resize(){W=c.width=innerWidth;H=c.height=innerHeight}
-  resize(); window.addEventListener('resize',resize);
-  function rand(a,b){return Math.random()*(b-a)+a}
-  for(let i=0;i<55;i++){
-    pts.push({
-      x:rand(0,innerWidth),y:rand(0,innerHeight),
-      vx:rand(-.18,.18),vy:rand(-.18,.18),
-      r:rand(.6,2.2),
-      o:rand(.06,.35),
-      g:Math.random()>.6
-    });
-  }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    pts.forEach(p=>{
-      p.x+=p.vx; p.y+=p.vy;
-      if(p.x<-5)p.x=W+5; if(p.x>W+5)p.x=-5;
-      if(p.y<-5)p.y=H+5; if(p.y>H+5)p.y=-5;
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle=p.g?`rgba(201,168,76,${p.o})`:`rgba(240,230,200,${p.o*.5})`;
-      ctx.fill();
-    });
-    // Draw delicate connecting lines between nearby gold particles
-    const gpts=pts.filter(p=>p.g);
-    for(let i=0;i<gpts.length;i++){
-      for(let j=i+1;j<gpts.length;j++){
-        const dx=gpts[i].x-gpts[j].x, dy=gpts[i].y-gpts[j].y;
-        const dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<140){
-          ctx.beginPath();
-          ctx.strokeStyle=`rgba(201,168,76,${.08*(1-dist/140)})`;
-          ctx.lineWidth=.5;
-          ctx.moveTo(gpts[i].x,gpts[i].y);
-          ctx.lineTo(gpts[j].x,gpts[j].y);
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-/* ─── SCROLL REVEAL ─── */
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){
-      setTimeout(()=>e.target.classList.add('in'), i*70);
-    }
-  });
-},{threshold:0.07});
-document.querySelectorAll('.rv,.rvl,.rvr,.rv2').forEach(el=>obs.observe(el));
-
-/* ─── ECOSYSTEM TABS ─── */
-function switchEco(idx, el){
-  document.querySelectorAll('.eco-tab').forEach(t=>t.classList.remove('on'));
-  el.classList.add('on');
-  document.querySelectorAll('.eco-panel').forEach((p,i)=>p.classList.toggle('on',i===idx));
-  // Re-trigger reveal for new panel cards
-  document.querySelectorAll('#ep'+idx+' .rv2').forEach((c,i)=>{
-    c.classList.remove('in');
-    setTimeout(()=>c.classList.add('in'),i*100+50);
-  });
-}
-
-/* ─── COUNTER ANIMATION ─── */
-const counterObs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const el = e.target;
-      const target = parseFloat(el.getAttribute('data-target'));
-      const suffix = el.getAttribute('data-suffix')||'';
-      let start=0; const dur=1800; const step=16;
-      const inc = target/(dur/step);
-      el.innerHTML='0<span class="stat-suf">'+suffix+'</span>';
-      const timer = setInterval(()=>{
-        start+=inc;
-        if(start>=target){
-          clearInterval(timer);
-          el.innerHTML=target+'<span class="stat-suf">'+suffix+'</span>';
-        } else {
-          el.innerHTML=Math.floor(start)+'<span class="stat-suf">'+suffix+'</span>';
-        }
-      },step);
-      counterObs.unobserve(el);
-    }
-  });
-},{threshold:.5});
-document.querySelectorAll('[data-target]').forEach(el=>counterObs.observe(el));
-
-/* ─── BAR ANIMATION ─── */
-document.querySelectorAll('.dbar-fill').forEach(bar=>{
-  const w = bar.style.width;
-  bar.style.width='0%';
-  const barObs = new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting){
-      setTimeout(()=>bar.style.width=w, 300);
-      barObs.unobserve(bar);
-    }
-  },{threshold:.3});
-  barObs.observe(bar);
-});
-
-/* ─── ACTIVE NAV HIGHLIGHT ─── */
-window.addEventListener('scroll',()=>{
-  document.querySelectorAll('section[id]').forEach(sec=>{
-    const rect=sec.getBoundingClientRect();
-    if(rect.top<=150&&rect.bottom>=150){
-      // could highlight nav if needed
-    }
-  });
-});
-
-/* ─── HOVER MAGIC on stat boxes ─── */
-document.querySelectorAll('.stat-box').forEach(b=>{
-  b.addEventListener('mouseenter',()=>b.style.background='rgba(201,168,76,.03)');
-  b.addEventListener('mouseleave',()=>b.style.background='');
-});
-</script>
-</body>
-</html>'''
-
-with open('/home/claude/fahd-store/README.html','a',encoding='utf-8') as f:
-    f.write(remaining)
-
-content = open('/home/claude/fahd-store/README.html',encoding='utf-8').read()
-checks = {
-  'Has DOCTYPE': '<!DOCTYPE html>' in content,
-  'Closes HTML': '</html>' in content,
-  'Has hero section': 'hero-main' in content,
-  'Has overview section': 'overview-head' in content,
-  'Has features bento': 'feat-bento' in content,
-  'Has ecosystem tabs': 'eco-tabs' in content,
-  'Has journey section': 'journey-grid' in content,
-  'Has marquee': 'marquee-track' in content,
-  'Has final CTA': 'cta-box' in content,
-  'Has particles canvas': 'particles' in content,
-  'Has counter animation': 'data-target' in content,
-  'Has scroll reveal': 'IntersectionObserver' in content,
-  'Has custom cursor': "id='cur'" in content,
-  'Has WhatsApp link': 'wa.me/201113903070' in content,
-  'Has portfolio link': 'moh222salah.github.io/cv' in content,
-  'Has Arabic text': 'فهد ستور' in content,
-  'Has delivery bars': 'dbar-fill' in content,
-  'Has payment stack': 'pay-stack' in content,
-  'Has loyalty tiers': 'tier-name' in content,
-  'Has AI visual': 'ai-visual' in content,
-}
-ok = True
-for k,v in checks.items():
-    status = '✅' if v else '❌'
-    if not v: ok = False
-    print(f"{status} {k}")
-print(f"\n{'All passed!' if ok else 'SOME FAILED'}")
-print(f"Size: {len(content)} bytes ({len(content)//1024} KB)")
-PYEOF
+<!-- ══════════ SECTION 4: JOURNEYS ══════════ -->
+<section class="jrn">
+  <div class="wrap">
+    <div style="text-align:center" class="rv">
+      <div class="sec-eye center">Experience Design</div>
+      <h2 class="sh2"><span class="pl">Every User.</span><br/><span class="gl">Their Perfect Journey.</span></h2>
+      <p class="sp">Three stakeholders. Three journeys. Each 
