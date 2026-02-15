@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title> Fahd Store </title>
+<meta name="description" content="منصة التجارة الإلكترونية الخليجية الفاخرة — تسوق بأسلوب ملكي فخم"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--g:#C9A84C;--gl:#E8C87A;--gp:#F5E6C0;--r:#0A0E1A;--rm:#0F1626;--rs:#141D30;--a:#1A2640;--gb:rgba(255,255,255,0.04);--gbd:rgba(201,168,76,0.18);--t1:#F0E6C8;--t2:#A89B7A;--tm:#5C5240;--ok:#2ECC71;--no:#E74C3C;--rad:16px;--rads:10px;--radl:24px;--tr:all 0.35s cubic-bezier(0.4,0,0.2,1);--fa:'IBM Plex Sans Arabic',sans-serif;--fe:'Space Grotesk',sans-serif;--fd:'Playfair Display',serif}
+[data-theme=light]{--r:#F5F0E8;--rm:#EDE7D8;--rs:#E8E0CC;--a:#D4C9A8;--gb:rgba(0,0,0,0.03);--gbd:rgba(150,110,30,0.20);--t1:#1A1208;--t2:#5A4A28;--tm:#8A7A5A}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fa);background:var(--r);color:var(--t1);overflow-x:hidden;line-height:1.7;transition:var(--tr)}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--r)}::-webkit-scrollbar-thumb{background:var(--g);border-radius:3px}
+.bg-c{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.18;animation:orf 20s infinite ease-in-out}
+.o1{width:600px;height:600px;background:radial-gradient(circle,var(--g),transparent);top:-200px;right:-200px}
+.o2{width:400px;height:400px;background:radial-gradient(circle,#1A4A8A,transparent);bottom:20%;left:-100px;animation-delay:-7s}
+.o3{width:300px;height:300px;background:radial-gradient(circle,var(--gl),transparent);top:50%;left:40%;animation-delay:-14s;opacity:.08}
+@keyframes orf{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-50px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
+@keyframes shim{to{background-position:200% center}}
+@keyframes pls{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+@keyframes fp{0%,100%{box-shadow:0 0 0 0 rgba(231,76,60,.4)}50%{box-shadow:0 0 0 8px rgba(231,76,60,0)}}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes floatP{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-20px) rotate(2deg)}}
+@keyframes fiU{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fiR{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes tIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.container{max-width:1320px;margin:0 auto;padding:0 24px}
+section{position:relative;z-index:1}
+.g{background:var(--gb);backdrop-filter:blur(20px);border:1px solid var(--gbd);border-radius:var(--rad)}
+.gc{background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));backdrop-filter:blur(24px);border:1px solid var(--gbd);border-radius:var(--radl);transition:var(--tr)}
+.gc:hover{border-color:rgba(201,168,76,.4);transform:translateY(-4px);box-shadow:0 0 40px rgba(201,168,76,.12)}
+/* PROMO */
+.promo{background:linear-gradient(90deg,var(--g),var(--gl),var(--g));background-size:200%;animation:shim 4s linear infinite;padding:9px 0;text-align:center;font-size:13px;font-weight:700;color:#0A0E1A;position:fixed;top:0;width:100%;z-index:1001}
+.px{position:absolute;left:16px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:16px;color:#0A0E1A;opacity:.7}
+/* NAV */
+.nav{position:fixed;top:40px;width:100%;z-index:1000;transition:var(--tr)}
+.nav.sc{background:rgba(10,14,26,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--gbd)}
+[data-theme=light] .nav.sc{background:rgba(245,240,232,.92)}
+.ni{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+.nlo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.ne{width:44px;height:44px;background:linear-gradient(135deg,var(--g),var(--gl));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:var(--r);font-family:var(--fd);box-shadow:0 0 20px rgba(201,168,76,.4);overflow:hidden;position:relative}
+.ne::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%);transform:translateX(-100%);transition:transform .6s ease}
+.nlo:hover .ne::after{transform:translateX(100%)}
+.nlt{display:flex;flex-direction:column;line-height:1.2}
+.nm{font-size:16px;font-weight:700;color:var(--g)}
+.ns{font-size:10px;color:var(--t2);font-family:var(--fe);letter-spacing:2px;text-transform:uppercase}
+.nlinks{display:flex;align-items:center;gap:4px;list-style:none}
+.nlinks a{text-decoration:none;color:var(--t2);font-size:14px;font-weight:500;padding:8px 14px;border-radius:var(--rads);transition:var(--tr);white-space:nowrap}
+.nlinks a:hover,.nlinks a.act{color:var(--g);background:rgba(201,168,76,.08)}
+.na{display:flex;align-items:center;gap:8px}
+.nb{width:40px;height:40px;border-radius:10px;background:var(--gb);border:1px solid var(--gbd);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--tr);color:var(--t2);font-size:18px;text-decoration:none;position:relative}
+.nb:hover{background:rgba(201,168,76,.12);border-color:var(--g);color:var(--g)}
+.bdg{position:absolute;top:-4px;left:-4px;background:var(--g);color:var(--r);font-size:9px;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fe)}
+.lt{background:var(--gb);border:1px solid var(--gbd);color:var(--g);font-size:13px;font-weight:600;padding:6px 12px;border-radius:8px;cursor:pointer;transition:var(--tr);font-family:var(--fe);letter-spacing:.5px}
+.lt:hover{background:rgba(201,168,76,.12);border-color:var(--g)}
+.tt{width:40px;height:40px;border-radius:10px;background:var(--gb);border:1px solid var(--gbd);cursor:pointer;transition:var(--tr);display:flex;align-items:center;justify-content:center;font-size:18px}
+.tt:hover{background:rgba(201,168,76,.12);border-color:var(--g)}
+.hb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:var(--gb);border:1px solid var(--gbd);border-radius:8px}
+.hb span{width:22px;height:2px;background:var(--g);border-radius:1px;transition:var(--tr)}
+/* MOBILE MENU */
+.mm{display:none;position:fixed;top:110px;left:0;right:0;background:rgba(10,14,26,.97);backdrop-filter:blur(24px);border-bottom:1px solid var(--gbd);z-index:999;padding:16px 24px;flex-direction:column;gap:4px}
+[data-theme=light] .mm{background:rgba(245,240,232,.97)}
+.mm.op{display:flex}
+.mm a{text-decoration:none;color:var(--t2);font-size:15px;padding:12px 16px;border-radius:var(--rads);transition:var(--tr);display:block}
+.mm a:hover{color:var(--g);background:rgba(201,168,76,.08)}
+/* SEARCH */
+.sbar{position:fixed;top:110px;left:0;right:0;z-index:998;background:rgba(10,14,26,.96);backdrop-filter:blur(24px);border-bottom:1px solid var(--gbd);padding:16px 24px;transform:translateY(-200%);transition:var(--tr)}
+[data-theme=light] .sbar{background:rgba(245,240,232,.96)}
+.sbar.op{transform:translateY(0)}
+.sw{max-width:640px;margin:0 auto;position:relative}
+.sinp{width:100%;background:var(--gb);border:1px solid rgba(201,168,76,.3);color:var(--t1);padding:14px 50px 14px 16px;border-radius:var(--rad);font-size:15px;outline:none;font-family:inherit;transition:var(--tr)}
+.sinp:focus{border-color:var(--g)}
+.sinp::placeholder{color:var(--tm)}
+.sbtn{position:absolute;inset-inline-end:10px;top:50%;transform:translateY(-50%);width:34px;height:34px;background:linear-gradient(135deg,var(--g),var(--gl));border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--r)}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:140px 0 80px}
+.hg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.hbd{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);color:var(--g);font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;margin-bottom:20px;letter-spacing:.5px}
+.hbd::before{content:'';width:6px;height:6px;background:var(--g);border-radius:50%;animation:pls 2s infinite}
+.ht{font-size:clamp(36px,5vw,68px);font-weight:900;line-height:1.15;margin-bottom:20px;animation:fiU .8s ease .1s both}
+.htm{display:block;background:linear-gradient(135deg,var(--t1),var(--gp));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hta{display:block;background:linear-gradient(135deg,var(--g),var(--gl),var(--g));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shim 3s linear infinite;font-family:var(--fd)}
+.hd{font-size:17px;color:var(--t2);margin-bottom:36px;max-width:480px;line-height:1.8;animation:fiU .8s ease .2s both}
+.ha{display:flex;gap:14px;flex-wrap:wrap;animation:fiU .8s ease .3s both}
+.bp{background:linear-gradient(135deg,var(--g),var(--gl));color:var(--r);border:none;padding:14px 32px;border-radius:var(--rad);font-size:15px;font-weight:700;cursor:pointer;transition:var(--tr);text-decoration:none;display:inline-flex;align-items:center;gap:8px;position:relative;overflow:hidden}
+.bp::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-100%);transition:transform .5s ease}
+.bp:hover::after{transform:translateX(100%)}
+.bp:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(201,168,76,.4)}
+.bs{background:var(--gb);border:1px solid var(--gbd);color:var(--t1);padding:14px 32px;border-radius:var(--rad);font-size:15px;font-weight:600;cursor:pointer;transition:var(--tr);text-decoration:none;display:inline-flex;align-items:center;gap:8px;backdrop-filter:blur(10px)}
+.bs:hover{border-color:var(--g);color:var(--g);transform:translateY(-2px)}
+.hst{display:flex;gap:32px;margin-top:48px;animation:fiU .8s ease .4s both;flex-wrap:wrap}
+.sti{display:flex;flex-direction:column;gap:4px}
+.stn{font-size:26px;font-weight:700;color:var(--g);font-family:var(--fe);line-height:1}
+.stl{font-size:12px;color:var(--tm);font-weight:500}
+/* PHONE */
+.hv{position:relative;animation:fiR 1s ease .3s both}
+.ph{width:280px;height:540px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid var(--gbd);border-radius:36px;margin:0 auto;position:relative;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 60px rgba(201,168,76,.1);animation:floatP 6s ease-in-out infinite}
+.phn{width:100px;height:28px;background:var(--r);border-radius:0 0 20px 20px;margin:0 auto;z-index:2}
+[data-theme=light] .phn{background:#F5F0E8}
+.phs{padding:0 12px 12px;height:calc(100% - 28px)}
+.phh{display:flex;align-items:center;justify-content:space-between;padding:10px 0 8px;border-bottom:1px solid var(--gbd);margin-bottom:8px}
+.phlg{font-size:12px;font-weight:700;color:var(--g)}
+.phbn{width:100%;height:90px;background:linear-gradient(135deg,var(--g),#8B6914);border-radius:12px;margin-bottom:10px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:12px}
+.phbt{font-size:10px;font-weight:700;color:#0A0E1A}
+.phbs{font-size:8px;color:rgba(0,0,0,.5)}
+.phbc{position:absolute;width:80px;height:80px;background:rgba(255,255,255,.15);border-radius:50%;left:60px;top:-20px}
+.phcs{display:flex;gap:6px;margin-bottom:10px}
+.phc{display:flex;flex-direction:column;align-items:center;gap:3px;flex-shrink:0}
+.phci{width:36px;height:36px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.phcl{font-size:7px;color:var(--t2)}
+.phps{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.php{background:rgba(255,255,255,.04);border:1px solid var(--gbd);border-radius:10px;overflow:hidden}
+.phpi{height:60px;background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.04));display:flex;align-items:center;justify-content:center;font-size:24px}
+.phpf{padding:5px}
+.phpn{font-size:7px;color:var(--t2)}
+.phpp{font-size:9px;color:var(--g);font-weight:700;font-family:var(--fe)}
+.fcs{position:absolute;inset:0;pointer-events:none}
+.fc{position:absolute;background:linear-gradient(135deg,rgba(255,255,255,.09),rgba(255,255,255,.03));backdrop-filter:blur(10px);border:1px solid var(--gbd);border-radius:12px;padding:10px 14px;font-size:11px;color:var(--t1);white-space:nowrap;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.fc1{top:15%;left:-30px;animation:flt 5s ease-in-out infinite}
+.fc2{bottom:25%;right:-20px;animation:flt 5s ease-in-out infinite 2.5s}
+.fci{font-size:16px;margin-bottom:2px}
+.fct{font-weight:600;color:var(--g);margin-bottom:1px}
+.fcs2{font-size:10px;color:var(--tm)}
+/* SECTION HEADERS */
+.sh{text-align:center;margin-bottom:60px}
+.stg{display:inline-block;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);color:var(--g);font-size:11px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+.st{font-size:clamp(28px,4vw,46px);font-weight:800;background:linear-gradient(135deg,var(--t1),var(--gp));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;line-height:1.2}
+.sd{font-size:16px;color:var(--t2);max-width:600px;margin:0 auto;line-height:1.8}
+/* FEATURES */
+.features{padding:100px 0}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.fcd{padding:32px;position:relative;overflow:hidden}
+.fcd::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--g),transparent);opacity:0;transition:var(--tr)}
+.fcd:hover::before{opacity:1}
+.fic{width:56px;height:56px;background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.25);border-radius:var(--rad);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;transition:var(--tr)}
+.fcd:hover .fic{transform:scale(1.05)}
+.fti{font-size:18px;font-weight:700;color:var(--t1);margin-bottom:10px}
+.fde{font-size:14px;color:var(--t2);line-height:1.7}
+/* CATEGORIES */
+.categories{padding:80px 0}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:16px}
+.ccd{padding:24px 16px;text-align:center;cursor:pointer;position:relative;overflow:hidden}
+.ccd::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(201,168,76,.08),transparent 70%);opacity:0;transition:var(--tr)}
+.ccd:hover::after{opacity:1}
+.cem{font-size:36px;margin-bottom:10px;display:block;transition:var(--tr)}
+.ccd:hover .cem{transform:scale(1.1) translateY(-3px)}
+.cnm{font-size:13px;font-weight:600;color:var(--t1);margin-bottom:4px}
+.cct{font-size:11px;color:var(--tm)}
+/* FLASH DEALS */
+.flash{padding:80px 0}
+.fh{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+.fl{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.fbg{background:linear-gradient(135deg,#E74C3C,#C0392B);color:white;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;animation:fp 1.5s ease-in-out infinite;display:flex;align-items:center;gap:6px}
+.cd{display:flex;align-items:center;gap:6px}
+.cdu{display:flex;flex-direction:column;align-items:center;gap:2px}
+.cdn{background:var(--rs);border:1px solid var(--gbd);border-radius:8px;padding:4px 8px;font-size:18px;font-weight:700;color:var(--g);font-family:var(--fe);min-width:40px;text-align:center}
+.cdl{font-size:9px;color:var(--tm)}
+.cds{font-size:18px;color:var(--g);font-weight:700;margin-bottom:10px}
+.bva{color:var(--g);text-decoration:none;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;transition:var(--tr)}
+.bva:hover{gap:10px}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.pcd{cursor:pointer;position:relative;overflow:hidden}
+.pi{height:200px;background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.02));display:flex;align-items:center;justify-content:center;font-size:64px;border-radius:var(--rad);margin-bottom:16px;position:relative;overflow:hidden;transition:var(--tr)}
+.pcd:hover .pi{transform:scale(.98)}
+.pdc{position:absolute;top:10px;right:10px;background:linear-gradient(135deg,#E74C3C,#C0392B);color:white;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;font-family:var(--fe)}
+.pw{position:absolute;top:10px;left:10px;width:30px;height:30px;background:rgba(0,0,0,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;transition:var(--tr);opacity:0;cursor:pointer}
+.pcd:hover .pw{opacity:1}
+.pw:hover{background:rgba(231,76,60,.8)}
+.pnm{font-size:14px;font-weight:600;color:var(--t1);margin-bottom:6px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.prt{display:flex;align-items:center;gap:4px;margin-bottom:8px}
+.sts{font-size:11px}
+.rn{font-size:11px;color:var(--tm);font-family:var(--fe)}
+.ppr{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.pcu{font-size:18px;font-weight:700;color:var(--g);font-family:var(--fe)}
+.por{font-size:12px;color:var(--tm);text-decoration:line-through;font-family:var(--fe)}
+.bac{width:36px;height:36px;background:linear-gradient(135deg,var(--g),var(--gl));border:none;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:var(--tr);color:var(--r);flex-shrink:0}
+.bac:hover{transform:scale(1.1) rotate(5deg)}
+/* HOW IT WORKS */
+.how{padding:100px 0}
+.swg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
+.scd{padding:32px 24px;text-align:center}
+.snum{width:48px;height:48px;background:linear-gradient(135deg,var(--g),var(--gl));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:var(--r);font-family:var(--fe);margin:0 auto 20px;box-shadow:0 0 20px rgba(201,168,76,.3)}
+.sico{font-size:36px;margin-bottom:14px}
+.stt{font-size:17px;font-weight:700;color:var(--t1);margin-bottom:10px}
+.sdd{font-size:13px;color:var(--t2);line-height:1.7}
+/* VENDORS */
+.vendors{padding:80px 0}
+.vg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.vcd{padding:24px;text-align:center;cursor:pointer}
+.vlg{width:70px;height:70px;background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.04));border:2px solid rgba(201,168,76,.2);border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:28px;transition:var(--tr)}
+.vcd:hover .vlg{border-color:var(--g);box-shadow:0 0 20px rgba(201,168,76,.25)}
+.vnm{font-size:14px;font-weight:700;color:var(--t1);margin-bottom:4px}
+.vct{font-size:12px;color:var(--tm);margin-bottom:10px}
+.vsr{display:flex;justify-content:center;gap:16px}
+.vs{font-size:11px;color:var(--t2)}
+.vs strong{color:var(--g);font-family:var(--fe)}
+/* TESTIMONIALS */
+.testis{padding:100px 0}
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.tcd{padding:28px}
+.tstr{font-size:14px;margin-bottom:14px}
+.ttx{font-size:14px;color:var(--t2);line-height:1.8;margin-bottom:20px;font-style:italic}
+.tau{display:flex;align-items:center;gap:12px}
+.tav{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--g),var(--rs));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.tan{font-size:14px;font-weight:700;color:var(--t1)}
+.talc{font-size:11px;color:var(--tm)}
+/* TRUST */
+.trust{padding:60px 0}
+.trg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.tri{padding:24px;text-align:center;background:var(--gb);border:1px solid var(--gbd);border-radius:var(--rad)}
+.tric{font-size:32px;margin-bottom:12px}
+.trt{font-size:15px;font-weight:700;color:var(--t1);margin-bottom:6px}
+.trd{font-size:12px;color:var(--tm)}
+/* SELL */
+.sell{padding:100px 0}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.stagi{display:inline-block;background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.25);color:var(--ok);font-size:12px;font-weight:600;padding:5px 14px;border-radius:20px;margin-bottom:16px;letter-spacing:1px}
+.sbe{margin-top:28px;display:flex;flex-direction:column;gap:14px}
+.sbi{display:flex;align-items:flex-start;gap:14px}
+.sbc{width:24px;height:24px;background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:2px}
+.sbtx{font-size:14px;color:var(--t2)}
+.sbtx strong{color:var(--t1)}
+.sv{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ssc{padding:24px 20px;background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--gbd);border-radius:var(--radl);text-align:center}
+.ssc:first-child{grid-column:span 2}
+.ssn{font-size:32px;font-weight:700;color:var(--g);font-family:var(--fe)}
+.ssl{font-size:13px;color:var(--tm);margin-top:4px}
+/* APP */
+.app{padding:100px 0}
+.ai{background:linear-gradient(135deg,rgba(201,168,76,.08),rgba(201,168,76,.02));border:1px solid var(--gbd);border-radius:32px;padding:60px;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;overflow:hidden;position:relative}
+.ai::before{content:'';position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(201,168,76,.12),transparent);border-radius:50%;top:-100px;right:200px}
+.att{font-size:36px;font-weight:800;margin-bottom:14px;line-height:1.2}
+.att span{color:var(--g)}
+.adc{font-size:15px;color:var(--t2);margin-bottom:28px;line-height:1.7}
+.abs{display:flex;gap:14px;flex-wrap:wrap}
+.ab{display:flex;align-items:center;gap:10px;background:var(--rs);border:1px solid var(--gbd);border-radius:12px;padding:10px 20px;text-decoration:none;transition:var(--tr)}
+.ab:hover{border-color:var(--g);transform:translateY(-2px)}
+.abic{font-size:24px}
+.abt{display:flex;flex-direction:column;gap:1px}
+.absu{font-size:10px;color:var(--tm)}
+.abnm{font-size:14px;font-weight:700;color:var(--t1)}
+.aphs{display:flex;position:relative}
+.aph{width:120px;height:220px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid var(--gbd);border-radius:20px;flex-shrink:0;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.aph:nth-child(2){margin-top:30px;margin-inline-start:-20px;width:130px;height:240px}
+/* CTA */
+.cta{padding:100px 0}
+.ci{background:linear-gradient(135deg,var(--rs),var(--a));border:1px solid var(--gbd);border-radius:36px;padding:80px 60px;text-align:center;position:relative;overflow:hidden}
+.ci::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center top,rgba(201,168,76,.12) 0%,transparent 60%)}
+.ci::after{content:'';position:absolute;top:-1px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,transparent,var(--g),transparent)}
+.ctag{display:inline-block;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--g);font-size:12px;font-weight:700;padding:6px 18px;border-radius:20px;margin-bottom:24px;letter-spacing:1px;text-transform:uppercase;position:relative}
+.ctti{font-size:clamp(32px,5vw,56px);font-weight:900;margin-bottom:16px;position:relative}
+.ctti span{color:var(--g)}
+.cdc{font-size:17px;color:var(--t2);max-width:600px;margin:0 auto 40px;line-height:1.8;position:relative}
+.cac{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
+.bpf{background:linear-gradient(135deg,var(--g),var(--gl));color:var(--r);border:none;padding:16px 36px;border-radius:var(--rad);font-size:15px;font-weight:700;cursor:pointer;transition:var(--tr);text-decoration:none;display:inline-flex;align-items:center;gap:10px;position:relative;overflow:hidden}
+.bpf::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-100%);transition:transform .5s ease}
+.bpf:hover::after{transform:translateX(100%)}
+.bpf:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(201,168,76,.45)}
+.bwh{background:linear-gradient(135deg,#25D366,#128C7E);color:white;border:none;padding:16px 36px;border-radius:var(--rad);font-size:15px;font-weight:700;cursor:pointer;transition:var(--tr);text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+.bwh:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(37,211,102,.35)}
+.ccon{display:flex;justify-content:center;gap:32px;margin-top:40px;flex-wrap:wrap;position:relative}
+.cci{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t2)}
+/* FOOTER */
+.footer{background:linear-gradient(180deg,transparent 0%,var(--rm) 100%);border-top:1px solid var(--gbd);padding:0 0 30px;position:relative;z-index:1}
+.nl{background:linear-gradient(90deg,rgba(201,168,76,.08),rgba(201,168,76,.04),rgba(201,168,76,.08));border-top:1px solid var(--gbd);border-bottom:1px solid var(--gbd);padding:28px 0;margin-bottom:48px}
+.nli2{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.nlt{font-size:16px;font-weight:700;color:var(--t1);margin-bottom:4px}
+.nls{font-size:12px;color:var(--tm)}
+.nlf{display:flex;gap:10px;flex:1;max-width:400px}
+.nlip{flex:1;background:var(--gb);border:1px solid var(--gbd);color:var(--t1);padding:10px 16px;border-radius:10px;font-size:13px;outline:none;transition:var(--tr);font-family:inherit}
+.nlip:focus{border-color:var(--g)}
+.nlip::placeholder{color:var(--tm)}
+.bnl{background:linear-gradient(135deg,var(--g),var(--gl));color:var(--r);border:none;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;transition:var(--tr);white-space:nowrap;font-family:inherit}
+.bnl:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,.3)}
+.fg2{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;padding-top:48px}
+.flg{display:flex;align-items:center;gap:12px;margin-bottom:16px;text-decoration:none}
+.fdc{font-size:13px;color:var(--tm);line-height:1.8;margin-bottom:20px;max-width:280px}
+.fsc{display:flex;gap:8px}
+.fsb{width:36px;height:36px;background:var(--gb);border:1px solid var(--gbd);border-radius:10px;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:16px;transition:var(--tr);color:var(--t2)}
+.fsb:hover{background:rgba(201,168,76,.12);border-color:var(--g);color:var(--g);transform:translateY(-2px)}
+.fct{font-size:14px;font-weight:700;color:var(--t1);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--gbd)}
+.fls{list-style:none;display:flex;flex-direction:column;gap:10px}
+.fls a{text-decoration:none;font-size:13px;color:var(--tm);transition:var(--tr)}
+.fls a:hover{color:var(--g);padding-inline-start:6px}
+.fb{border-top:1px solid var(--gbd);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.fcp{font-size:12px;color:var(--tm)}
+.fcp a{color:var(--g);text-decoration:none}
+.fps{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.fpb{background:var(--gb);border:1px solid var(--gbd);border-radius:8px;padding:4px 10px;font-size:10px;font-weight:700;color:var(--t2);font-family:var(--fe)}
+/* UTILS */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+/* CART SIDEBAR */
+.cov{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:1999;opacity:0;pointer-events:none;transition:var(--tr)}
+.cov.op{opacity:1;pointer-events:all}
+.crt{position:fixed;inset-inline-end:0;top:0;bottom:0;width:360px;background:var(--rm);border-inline-start:1px solid var(--gbd);z-index:2000;transform:translateX(110%);transition:var(--tr);display:flex;flex-direction:column}
+.crt.op{transform:translateX(0)}
+.crth{padding:20px 24px;border-bottom:1px solid var(--gbd);display:flex;align-items:center;justify-content:space-between}
+.crtit{font-size:18px;font-weight:700;color:var(--t1)}
+.crcl{width:32px;height:32px;background:var(--gb);border:1px solid var(--gbd);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:var(--t2);transition:var(--tr)}
+.crcl:hover{background:rgba(231,76,60,.15);color:var(--no)}
+.cits{flex:1;overflow-y:auto;padding:16px 24px}
+.cit{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--gbd)}
+.ciim{width:64px;height:64px;background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(201,168,76,.03));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+.ciin{flex:1}
+.cinm{font-size:13px;font-weight:600;color:var(--t1);margin-bottom:4px}
+.cipr{font-size:14px;font-weight:700;color:var(--g);font-family:var(--fe)}
+.ciq{display:flex;align-items:center;gap:8px;margin-top:6px}
+.qb{width:24px;height:24px;background:var(--gb);border:1px solid var(--gbd);border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;color:var(--t2);transition:var(--tr)}
+.qb:hover{background:rgba(201,168,76,.12);color:var(--g)}
+.qn{font-size:13px;font-weight:700;color:var(--t1);min-width:20px;text-align:center;font-family:var(--fe)}
+.crf{padding:20px 24px;border-top:1px solid var(--gbd)}
+.cto{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.ctol{font-size:14px;color:var(--t2)}
+.ctoa{font-size:22px;font-weight:700;color:var(--g);font-family:var(--fe)}
+.bck{width:100%;background:linear-gradient(135deg,var(--g),var(--gl));color:var(--r);border:none;padding:14px;border-radius:var(--rad);font-size:15px;font-weight:700;cursor:pointer;transition:var(--tr);font-family:inherit}
+.bck:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,168,76,.4)}
+/* AUTH MODAL */
+.mov{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);z-index:3000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:var(--tr);padding:20px}
+.mov.op{opacity:1;pointer-events:all}
+.mbx{background:var(--rm);border:1px solid var(--gbd);border-radius:24px;padding:40px;width:100%;max-width:440px;position:relative;transform:scale(.9) translateY(20px);transition:var(--tr);box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.mov.op .mbx{transform:scale(1) translateY(0)}
+.mcl{position:absolute;top:16px;left:16px;width:32px;height:32px;background:var(--gb);border:1px solid var(--gbd);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:var(--t2);transition:var(--tr)}
+.mcl:hover{background:rgba(231,76,60,.15);color:var(--no)}
+.mts{display:flex;background:var(--gb);border:1px solid var(--gbd);border-radius:var(--rad);padding:4px;margin-bottom:28px}
+.mtb{flex:1;padding:10px;border:none;background:none;color:var(--tm);font-size:13px;font-weight:600;cursor:pointer;border-radius:10px;transition:var(--tr);font-family:inherit}
+.mtb.act{background:linear-gradient(135deg,var(--g),var(--gl));color:var(--r)}
+.fg3{margin-bottom:16px}
+.fl2{display:block;font-size:12px;font-weight:600;color:var(--t2);margin-bottom:6px;letter-spacing:.5px}
+.fi2{width:100%;background:var(--gb);border:1px solid var(--gbd);color:var(--t1);padding:12px 16px;border-radius:10px;font-size:14px;outline:none;transition:var(--tr);font-family:inherit}
+.fi2:focus{border-color:var(--g);box-shadow:0 0 0 3px rgba(201,168,76,.12)}
+.fi2::placeholder{color:var(--tm)}
+.slg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.slb{padding:10px 14px;background:var(--gb);border:1px solid var(--gbd);border-radius:10px;cursor:pointer;font-size:13px;font-weight:600;color:var(--t1);transition:var(--tr);display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit}
+.slb:hover{border-color:var(--g);background:rgba(201,168,76,.06)}
+.dv{display:flex;align-items:center;gap:12px;margin:20px 0;color:var(--tm);font-size:12px}
+.dv::before,.dv::after{content:'';flex:1;height:1px;background:var(--gbd)}
+/* SELLER MODAL */
+.smod{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:4000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:var(--tr);padding:20px}
+.smod.op{opacity:1;pointer-events:all}
+.smbx{background:var(--rm);border:1px solid var(--gbd);border-radius:24px;padding:40px;width:100%;max-width:560px;position:relative;transform:scale(.9) translateY(20px);transition:var(--tr);max-height:90vh;overflow-y:auto}
+.smod.op .smbx{transform:scale(1) translateY(0)}
+/* TOAST */
+.tw{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+.tst{background:var(--rs);border:1px solid var(--gbd);color:var(--t1);padding:12px 20px;border-radius:12px;font-size:13px;font-weight:600;box-shadow:0 20px 60px rgba(0,0,0,.5);display:flex;align-items:center;gap:10px;backdrop-filter:blur(20px);animation:tIn .35s ease forwards;white-space:nowrap}
+.btt{position:fixed;bottom:24px;left:24px;width:44px;height:44px;background:linear-gradient(135deg,var(--g),var(--gl));border:none;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;color:var(--r);transition:var(--tr);opacity:0;pointer-events:none;z-index:500}
+.btt.show{opacity:1;pointer-events:all}
+.btt:hover{transform:translateY(-3px)}
+/* RESPONSIVE */
+@media(max-width:1024px){.hg{grid-template-columns:1fr;gap:60px}.hv{order:-1}.ph{width:220px;height:420px}.sg{grid-template-columns:1fr;gap:40px}.ai{grid-template-columns:1fr}.fg2{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nlinks{display:none}.hb{display:flex}.hero{padding:140px 0 60px}.fg{grid-template-columns:1fr 1fr}.cg{grid-template-columns:repeat(4,1fr)}.pg{grid-template-columns:repeat(2,1fr)}.ci{padding:50px 24px}.ai{padding:36px 24px}.fg2{grid-template-columns:1fr}.fc{display:none}.crt{width:100%}}
+@media(max-width:480px){.fg{grid-template-columns:1fr}.cg{grid-template-columns:repeat(3,1fr)}.swg{grid-template-columns:1fr}.tg{grid-template-columns:1fr}.trg{grid-template-columns:1fr 1fr}.sv{grid-template-columns:1fr}.ssc:first-child{grid-column:span 1}}
+</style>
+</head>
+<body>
+
+<div class="bg-c"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div id="pt"></div></div>
+
+<div class="promo" id="pb">
+  <span class="la"> عرض محدود: خصم 30% على أول طلب — كود <strong>FAHD30</strong> | شحن مجاني فوق 200 ريال 🚀</span>
+  <span class="le" style="display:none"> Limited Offer: 30% off first order — Code <strong>FAHD30</strong> | Free shipping over 200 SAR 🚀</span>
+  <button class="px" onclick="hidePb()">✕</button>
+</div>
+
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="ni">
+      <a class="nlo" href="#home">
+        <div class="ne">ف</div>
+        <div class="nlt"><span class="nm la">فهد ستور</span><span class="nm le" style="display:none">Fahd Store</span><span class="ns">LUXURY E-COMMERCE</span></div>
+      </a>
+      <ul class="nlinks">
+        <li><a href="#home" class="act"><span class="la">الرئيسية</span><span class="le" style="display:none">Home</span></a></li>
+        <li><a href="#categories"><span class="la">الأقسام</span><span class="le" style="display:none">Categories</span></a></li>
+        <li><a href="#deals"><span class="la">العروض</span><span class="le" style="display:none">Deals</span></a></li>
+        <li><a href="#vendors"><span class="la">البائعون</span><span class="le" style="display:none">Vendors</span></a></li>
+        <li><a href="#sell"><span class="la">ابدأ البيع</span><span class="le" style="display:none">Sell</span></a></li>
+        <li><a href="#app"><span class="la">التطبيق</span><span class="le" style="display:none">App</span></a></li>
+      </ul>
+      <div class="na">
+        <button class="nb" onclick="toggleSearch()">🔍</button>
+        <button class="nb" onclick="showToast('💛','أضيف للمفضلة','Added to wishlist')">🤍</button>
+        <button class="nb" onclick="toggleCart()">🛒<span class="bdg" id="cBdg">3</span></button>
+        <button class="nb" onclick="openModal()">👤</button>
+        <button class="lt" onclick="toggleLang()" id="lBtn">EN</button>
+        <button class="tt" onclick="toggleTheme()" id="tBtn">🌙</button>
+        <div class="hb" onclick="toggleMob()" id="hmbg"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mm" id="mMen">
+  <a href="#home" onclick="closeMob()"><span class="la">الرئيسية</span><span class="le" style="display:none">Home</span></a>
+  <a href="#categories" onclick="closeMob()"><span class="la">الأقسام</span><span class="le" style="display:none">Categories</span></a>
+  <a href="#deals" onclick="closeMob()"><span class="la">العروض</span><span class="le" style="display:none">Deals</span></a>
+  <a href="#vendors" onclick="closeMob()"><span class="la">البائعون</span><span class="le" style="display:none">Vendors</span></a>
+  <a href="#sell" onclick="closeMob()"><span class="la">ابدأ البيع</span><span class="le" style="display:none">Start Selling</span></a>
+  <a href="#app" onclick="closeMob()"><span class="la">التطبيق</span><span class="le" style="display:none">App</span></a>
+</div>
+
+<div class="sbar" id="sBar">
+  <div class="sw">
+    <input class="sinp la" type="text" placeholder="ابحث عن منتجات، علامات تجارية، أقسام..."/>
+    <input class="sinp le" type="text" placeholder="Search products, brands, categories..." style="display:none"/>
+    <button class="sbtn">🔍</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hg">
+      <div>
+        <div class="hbd"><span class="la">منصة التجارة الإلكترونية الخليجية الفاخرة رقم ١</span><span class="le" style="display:none">Gulf's #1 Luxury E-Commerce Platform</span></div>
+        <h1 class="ht"><span class="htm la">تسوّق بأسلوب</span><span class="htm le" style="display:none">Shop with</span><span class="hta la">ملكي فخم</span><span class="hta le" style="display:none">Royal Elegance</span></h1>
+        <p class="hd la">منصة التجارة الإلكترونية الأولى في الخليج — آلاف المنتجات الأصيلة، توصيل سريع، وتجربة تسوق لا مثيل لها في السوق السعودي</p>
+        <p class="hd le" style="display:none">The Gulf's premier luxury e-commerce destination — thousands of authentic products, lightning-fast delivery, and an unparalleled shopping experience across Saudi Arabia</p>
+        <div class="ha"><a href="#deals" class="bp"><span class="la">تسوق الآن</span><span class="le" style="display:none">Shop Now</span> →</a><a href="#sell" class="bs"><span class="la">ابدأ البيع</span><span class="le" style="display:none">Start Selling</span></a></div>
+        <div class="hst">
+          <div class="sti"><span class="stn">+500K</span><span class="stl la">منتج أصيل</span><span class="stl le" style="display:none">Products</span></div>
+          <div class="sti"><span class="stn">+50K</span><span class="stl la">عميل سعيد</span><span class="stl le" style="display:none">Customers</span></div>
+          <div class="sti"><span class="stn">+2K</span><span class="stl la">بائع موثوق</span><span class="stl le" style="display:none">Vendors</span></div>
+          <div class="sti"><span class="stn">24/7</span><span class="stl la">دعم متواصل</span><span class="stl le" style="display:none">Support</span></div>
+        </div>
+      </div>
+      <div class="hv">
+        <div class="fcs">
+          <div class="fc fc1 g"><div class="fci">📦</div><div class="fct la">طلبك في الطريق!</div><div class="fct le" style="display:none">Order on its way!</div><div class="fcs2 la">توصيل خلال ساعتين</div><div class="fcs2 le" style="display:none">Delivery in 2 hours</div></div>
+          <div class="fc fc2 g"><div class="fci">⭐</div><div class="fct la">تقييم 4.9/5</div><div class="fct le" style="display:none">Rating 4.9/5</div><div class="fcs2 la">من +10K تقييم</div><div class="fcs2 le" style="display:none">10K+ reviews</div></div>
+        </div>
+        <div class="ph">
+          <div class="phn"></div>
+          <div class="phs">
+            <div class="phh"><span class="phlg la">فهد ستور</span><span class="phlg le" style="display:none">Fahd Store</span><span style="font-size:16px">🔔</span></div>
+            <div style="display:flex;align-items:center;background:rgba(255,255,255,.05);border:1px solid var(--gbd);border-radius:20px;padding:6px 10px;gap:6px;margin-bottom:10px"><span style="font-size:10px">🔍</span><span style="font-size:8px;color:var(--tm)" class="la">ابحث عن منتجاتك...</span><span style="font-size:8px;color:var(--tm)" class="le" style="display:none">Search products...</span></div>
+            <div class="phbn"><div style="z-index:1"><div class="phbt la">عروض العيد 🎉</div><div class="phbt le" style="display:none">Eid Deals 🎉</div><div class="phbs la">خصم حتى 70%</div><div class="phbs le" style="display:none">Up to 70% off</div></div><div class="phbc"></div></div>
+            <div class="phcs">
+              <div class="phc"><div class="phci">📱</div><div class="phcl la">إلكترونيات</div><div class="phcl le" style="display:none">Tech</div></div>
+              <div class="phc"><div class="phci">👗</div><div class="phcl la">أزياء</div><div class="phcl le" style="display:none">Fashion</div></div>
+              <div class="phc"><div class="phci">🏠</div><div class="phcl la">منزل</div><div class="phcl le" style="display:none">Home</div></div>
+              <div class="phc"><div class="phci">💄</div><div class="phcl la">جمال</div><div class="phcl le" style="display:none">Beauty</div></div>
+              <div class="phc"><div class="phci">🎮</div><div class="phcl la">ألعاب</div><div class="phcl le" style="display:none">Games</div></div>
+            </div>
+            <div class="phps">
+              <div class="php"><div class="phpi">⌚</div><div class="phpf"><div class="phpn la">ساعة ذكية</div><div class="phpn le" style="display:none">Smart Watch</div><div class="phpp">499 SAR</div></div></div>
+              <div class="php"><div class="phpi">🎧</div><div class="phpf"><div class="phpn la">سماعات</div><div class="phpn le" style="display:none">Earbuds</div><div class="phpp">179 SAR</div></div></div>
+              <div class="php"><div class="phpi">📱</div><div class="phpf"><div class="phpn la">هاتف ذكي</div><div class="phpn le" style="display:none">Smartphone</div><div class="phpp">2,199 SAR</div></div></div>
+              <div class="php"><div class="phpi">👟</div><div class="phpf"><div class="phpn la">حذاء رياضي</div><div class="phpn le" style="display:none">Sport Shoes</div><div class="phpp">249 SAR</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features reveal" id="features">
+  <div class="container">
+    <div class="sh"><span class="stg la">لماذا فهد ستور؟</span><span class="stg le" style="display:none">Why Fahd Store?</span><h2 class="st la">منصة تجارية بمعايير ملكية</h2><h2 class="st le" style="display:none">A Platform Built to Royal Standards</h2><p class="sd la">نقدم تجربة تسوق استثنائية تجمع بين الفخامة الخليجية والتقنية الحديثة</p><p class="sd le" style="display:none">We deliver an exceptional experience combining Gulf luxury with cutting-edge technology</p></div>
+    <div class="fg">
+      <div class="fcd gc reveal"><div class="fic">🚀</div><h3 class="fti la">توصيل خاطف</h3><h3 class="fti le" style="display:none">Lightning Delivery</h3><p class="fde la">توصيل خلال ساعتين في الرياض وجدة والدمام — نفس اليوم في جميع أنحاء المملكة</p><p class="fde le" style="display:none">2-hour delivery in Riyadh, Jeddah & Dammam — same-day nationwide</p></div>
+      <div class="fcd gc reveal"><div class="fic">🛡️</div><h3 class="fti la">منتجات 100% أصيلة</h3><h3 class="fti le" style="display:none">100% Authentic Products</h3><p class="fde la">كل منتج يمر بفحص دقيق — ضمان كامل أو استرداد المبلغ فوراً</p><p class="fde le" style="display:none">Every product passes rigorous inspection — full guarantee or instant refund</p></div>
+      <div class="fcd gc reveal"><div class="fic">💳</div><h3 class="fti la">دفع آمن ومتعدد</h3><h3 class="fti le" style="display:none">Secure Multi-Payment</h3><p class="fde la">مدى، STC Pay، Apple Pay، تابي وتمارة للتقسيط — أمان PCI DSS</p><p class="fde le" style="display:none">Mada, STC Pay, Apple Pay, Tabby & Tamara — PCI DSS certified security</p></div>
+      <div class="fcd gc reveal"><div class="fic">🤖</div><h3 class="fti la">ذكاء اصطناعي متقدم</h3><h3 class="fti le" style="display:none">Advanced AI</h3><p class="fde la">توصيات مخصصة، بحث بالصور، وخدمة عملاء ذكية تعمل 24/7</p><p class="fde le" style="display:none">Personalized recommendations, visual search & smart 24/7 AI customer service</p></div>
+      <div class="fcd gc reveal"><div class="fic">↩️</div><h3 class="fti la">إرجاع مجاني 30 يومًا</h3><h3 class="fti le" style="display:none">Free 30-Day Returns</h3><p class="fde la">استرجع أي منتج خلال 30 يومًا — استلام مجاني من باب منزلك</p><p class="fde le" style="display:none">Return any product within 30 days — free doorstep pickup included</p></div>
+      <div class="fcd gc reveal"><div class="fic">👑</div><h3 class="fti la">برنامج الولاء الملكي</h3><h3 class="fti le" style="display:none">Royal Loyalty Program</h3><p class="fde la">اكسب نقاط ذهبية مع كل شراء — Bronze وSilver وGold وPlatinum</p><p class="fde le" style="display:none">Earn golden points every purchase — Bronze, Silver, Gold & Platinum tiers</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories reveal" id="categories">
+  <div class="container">
+    <div class="sh"><span class="stg la">تسوق حسب القسم</span><span class="stg le" style="display:none">Shop by Category</span><h2 class="st la">اكتشف عالم التسوق</h2><h2 class="st le" style="display:none">Discover Our World</h2></div>
+    <div class="cg">
+      <div class="ccd gc"><span class="cem">📱</span><div class="cnm la">إلكترونيات</div><div class="cnm le" style="display:none">Electronics</div><div class="cct">+12K</div></div>
+      <div class="ccd gc"><span class="cem">👗</span><div class="cnm la">أزياء</div><div class="cnm le" style="display:none">Fashion</div><div class="cct">+8K</div></div>
+      <div class="ccd gc"><span class="cem">🏠</span><div class="cnm la">منزل وديكور</div><div class="cnm le" style="display:none">Home & Decor</div><div class="cct">+6K</div></div>
+      <div class="ccd gc"><span class="cem">💄</span><div class="cnm la">جمال وعناية</div><div class="cnm le" style="display:none">Beauty & Care</div><div class="cct">+9K</div></div>
+      <div class="ccd gc"><span class="cem">🎮</span><div class="cnm la">ألعاب</div><div class="cnm le" style="display:none">Gaming</div><div class="cct">+3K</div></div>
+      <div class="ccd gc"><span class="cem">⌚</span><div class="cnm la">ساعات وإكسسوار</div><div class="cnm le" style="display:none">Watches & Acc.</div><div class="cct">+5K</div></div>
+      <div class="ccd gc"><span class="cem">🍔</span><div class="cnm la">مطبخ وطعام</div><div class="cnm le" style="display:none">Kitchen & Food</div><div class="cct">+4K</div></div>
+      <div class="ccd gc"><span class="cem">📚</span><div class="cnm la">كتب وتعليم</div><div class="cnm le" style="display:none">Books & Education</div><div class="cct">+2K</div></div>
+      <div class="ccd gc"><span class="cem">🏋️</span><div class="cnm la">رياضة ولياقة</div><div class="cnm le" style="display:none">Sports & Fitness</div><div class="cct">+7K</div></div>
+      <div class="ccd gc"><span class="cem">🚗</span><div class="cnm la">سيارات وقطع</div><div class="cnm le" style="display:none">Auto & Parts</div><div class="cct">+3K</div></div>
+      <div class="ccd gc"><span class="cem">👶</span><div class="cnm la">أطفال ومواليد</div><div class="cnm le" style="display:none">Baby & Kids</div><div class="cct">+4K</div></div>
+      <div class="ccd gc"><span class="cem">🌿</span><div class="cnm la">صحة وعافية</div><div class="cnm le" style="display:none">Health & Wellness</div><div class="cct">+5K</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FLASH DEALS -->
+<section class="flash reveal" id="deals">
+  <div class="container">
+    <div class="fh"><div class="fl"><div class="fbg">⚡ <span class="la">عروض لحظية</span><span class="le" style="display:none">Flash Deals</span></div><div class="cd"><div class="cdu"><div class="cdn" id="cdH">04</div><div class="cdl la">ساعة</div><div class="cdl le" style="display:none">hrs</div></div><span class="cds">:</span><div class="cdu"><div class="cdn" id="cdM">23</div><div class="cdl la">دقيقة</div><div class="cdl le" style="display:none">min</div></div><span class="cds">:</span><div class="cdu"><div class="cdn" id="cdS">45</div><div class="cdl la">ثانية</div><div class="cdl le" style="display:none">sec</div></div></div></div><a href="#" class="bva"><span class="la">عرض الكل</span><span class="le" style="display:none">View All</span> →</a></div>
+    <div class="pg">
+      <div class="pcd gc" style="padding:20px"><div class="pi">⌚<span class="pdc">-40%</span><span class="pw" onclick="showToast('💛','أضيف للمفضلة','Added to wishlist')">🤍</span></div><p class="pnm la">Apple Watch Series 9</p><p class="pnm le" style="display:none">Apple Watch Series 9</p><div class="prt"><span class="sts">⭐⭐⭐⭐⭐</span><span class="rn">(4.9) 2,341</span></div><div class="ppr"><div><div class="pcu">899 SAR</div><div class="por">1,499 SAR</div></div><button class="bac" onclick="addToCart()">🛒</button></div></div>
+      <div class="pcd gc" style="padding:20px"><div class="pi">🎧<span class="pdc">-35%</span><span class="pw" onclick="showToast('💛','أضيف للمفضلة','Added to wishlist')">🤍</span></div><p class="pnm la">AirPods Pro 2</p><p class="pnm le" style="display:none">AirPods Pro 2</p><div class="prt"><span class="sts">⭐⭐⭐⭐⭐</span><span class="rn">(4.8) 5,109</span></div><div class="ppr"><div><div class="pcu">649 SAR</div><div class="por">999 SAR</div></div><button class="bac" onclick="addToCart()">🛒</button></div></div>
+      <div class="pcd gc" style="padding:20px"><div class="pi">📱<span class="pdc">-25%</span><span class="pw" onclick="showToast('💛','أضيف للمفضلة','Added to wishlist')">🤍</span></div><p class="pnm la">Samsung Galaxy S24 Ultra</p><p class="pnm le" style="display:none">Samsung Galaxy S24 Ultra</p><div class="prt"><span class="sts">⭐⭐⭐⭐⭐</span><span class="rn">(4.9) 8,765</span></div><div class="ppr"><div><div class="pcu">3,299 SAR</div><div class="por">4,399 SAR</div></div><button class="bac" onclick="addToCart()">🛒</button></div></div>
+      <div class="pcd gc" style="padding:20px"><div class="pi">💻<span class="pdc">-30%</span><span class="pw" onclick="showToast('💛','أضيف للمفضلة','Added to wishlist')">🤍</span></div><p class="pnm la">MacBook Air M3</p><p class="pnm le" style="display:none">MacBook Air M3</p><div class="prt"><span class="sts">⭐⭐⭐⭐⭐</span><span class="rn">(5.0) 3,201</span></div><div class="ppr"><div><div class="pcu">4,899 SAR</div><div class="por">6,999 SAR</div></div><button class="bac" onclick="addToCart()">🛒</button></div></div>
+      <div class="pcd gc" style="padding:20px"><div class="pi">👟<span class="pdc">-50%</span><span class="pw" onclick="showToast('💛','أضيف للمفضلة','Added to wishlist')">🤍</span></div><p class="pnm la">Nike Air Max 2024</p><p class="pnm le" style="display:none">Nike Air Max 2024</p><div class="prt"><span class="sts">⭐⭐⭐⭐⭐</span><span class="rn">(4.7) 4,892</span></div><div class="ppr"><div><div class="pcu">399 SAR</div><div class="por">799 SAR</div></div><button class="bac" onclick="addToCart()">🛒</button></div></div>
+      <div class="pcd gc" style="padding:20px"><div class="pi">🎮<span class="pdc">-20%</span><span class="pw" onclick="showToast('💛','أضيف للمفضلة','Added to wishlist')">🤍</span></div><p class="pnm la">PlayStation 5 Pro</p><p class="pnm le" style="display:none">PlayStation 5 Pro</p><div class="prt"><span class="sts">⭐⭐⭐⭐⭐</span><span class="rn">(4.9) 12,440</span></div><div class="ppr"><div><div class="pcu">2,199 SAR</div><div class="por">2,749 SAR</div></div><button class="bac" onclick="addToCart()">🛒</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how reveal" id="how">
+  <div class="container">
+    <div class="sh"><span class="stg la">كيف يعمل؟</span><span class="stg le" style="display:none">How It Works</span><h2 class="st la">تسوق في 4 خطوات بسيطة</h2><h2 class="st le" style="display:none">Shop in 4 Simple Steps</h2></div>
+    <div class="swg">
+      <div class="scd gc reveal"><div class="snum">1</div><div class="sico">🔍</div><h3 class="stt la">اكتشف المنتجات</h3><h3 class="stt le" style="display:none">Discover Products</h3><p class="sdd la">تصفح آلاف المنتجات أو ابحث بالصور أو الكلمات الدلالية بسهولة</p><p class="sdd le" style="display:none">Browse thousands of products or search by image or keywords with ease</p></div>
+      <div class="scd gc reveal"><div class="snum">2</div><div class="sico">🛒</div><h3 class="stt la">أضف لعربتك</h3><h3 class="stt le" style="display:none">Add to Cart</h3><p class="sdd la">أضف منتجاتك المفضلة واختر الحجم والألوان والكميات بمرونة</p><p class="sdd le" style="display:none">Add favorites and select sizes, colors & quantities with flexibility</p></div>
+      <div class="scd gc reveal"><div class="snum">3</div><div class="sico">💳</div><h3 class="stt la">ادفع بأمان</h3><h3 class="stt le" style="display:none">Pay Securely</h3><p class="sdd la">ادفع بمدى أو Apple Pay أو قسّط مع تابي وتمارة بدون فوائد</p><p class="sdd le" style="display:none">Pay with Mada, Apple Pay or interest-free installments via Tabby & Tamara</p></div>
+      <div class="scd gc reveal"><div class="snum">4</div><div class="sico">🚀</div><h3 class="stt la">استلم طلبك</h3><h3 class="stt le" style="display:none">Receive Order</h3><p class="sdd la">تتبع طلبك لحظة بلحظة واستلمه عند بابك في أسرع وقت</p><p class="sdd le" style="display:none">Track your order in real-time and receive it at your doorstep</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VENDORS -->
+<section class="vendors reveal" id="vendors">
+  <div class="container">
+    <div class="sh"><span class="stg la">أفضل البائعين</span><span class="stg le" style="display:none">Top Vendors</span><h2 class="st la">شركاء النجاح الموثوقون</h2><h2 class="st le" style="display:none">Our Trusted Success Partners</h2><p class="sd la">أكثر من 2000 بائع موثوق، منتجات مضمونة، وخدمة عملاء استثنائية</p><p class="sd le" style="display:none">Over 2,000 trusted vendors, guaranteed products, and exceptional customer service</p></div>
+    <div class="vg">
+      <div class="vcd gc"><div class="vlg">🏪</div><div class="vnm la">التقنية العصرية</div><div class="vnm le" style="display:none">Modern Tech Store</div><div class="vct la">إلكترونيات وأجهزة</div><div class="vct le" style="display:none">Electronics & Devices</div><div class="vsr"><div class="vs">⭐ <strong>4.9</strong></div><div class="vs">🛍️ <strong>12.4K</strong></div></div></div>
+      <div class="vcd gc"><div class="vlg">👑</div><div class="vnm la">رويال فاشون</div><div class="vnm le" style="display:none">Royal Fashion</div><div class="vct la">أزياء وملابس فاخرة</div><div class="vct le" style="display:none">Luxury Fashion & Clothing</div><div class="vsr"><div class="vs">⭐ <strong>4.8</strong></div><div class="vs">🛍️ <strong>8.9K</strong></div></div></div>
+      <div class="vcd gc"><div class="vlg">🏡</div><div class="vnm la">ديكور بريستيج</div><div class="vnm le" style="display:none">Prestige Decor</div><div class="vct la">منزل وديكور فاخر</div><div class="vct le" style="display:none">Luxury Home & Decor</div><div class="vsr"><div class="vs">⭐ <strong>4.9</strong></div><div class="vs">🛍️ <strong>6.2K</strong></div></div></div>
+      <div class="vcd gc"><div class="vlg">💎</div><div class="vnm la">جمال دايموند</div><div class="vnm le" style="display:none">Diamond Beauty</div><div class="vct la">جمال وعناية فاخرة</div><div class="vct le" style="display:none">Luxury Beauty & Care</div><div class="vsr"><div class="vs">⭐ <strong>4.7</strong></div><div class="vs">🛍️ <strong>9.1K</strong></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testis reveal" id="reviews">
+  <div class="container">
+    <div class="sh"><span class="stg la">آراء عملائنا</span><span class="stg le" style="display:none">Customer Reviews</span><h2 class="st la">قالوا عن فهد ستور</h2><h2 class="st le" style="display:none">What Our Customers Say</h2><p class="sd la">تقييم 4.9 من 5 — من أكثر من 50,000 مراجعة حقيقية</p><p class="sd le" style="display:none">4.9 out of 5 — from 50,000+ genuine reviews from satisfied customers</p></div>
+    <div class="tg">
+      <div class="tcd gc"><div class="tstr">⭐⭐⭐⭐⭐</div><p class="ttx la">"تجربة تسوق استثنائية! التوصيل في ساعتين، المنتجات أصيلة 100%، وخدمة عملاء مميزة. فهد ستور أفضل متجر إلكتروني في السعودية."</p><p class="ttx le" style="display:none">"An exceptional shopping experience! 2-hour delivery, 100% authentic products, and outstanding support. Fahd Store is the best online store in Saudi Arabia."</p><div class="tau"><div class="tav">🧔</div><div><div class="tan la">عبدالله الغامدي</div><div class="tan le" style="display:none">Abdullah Al-Ghamdi</div><div class="talc la">الرياض، السعودية</div><div class="talc le" style="display:none">Riyadh, Saudi Arabia</div></div></div></div>
+      <div class="tcd gc"><div class="tstr">⭐⭐⭐⭐⭐</div><p class="ttx la">"أخيراً متجر خليجي يفهم احتياجاتنا! التصميم فاخر، المنتجات متنوعة، والتقسيط مع تابي ميّز التجربة بالكامل."</p><p class="ttx le" style="display:none">"Finally a Gulf store that understands our needs! Luxury design, diverse products, and Tabby installments made the experience complete."</p><div class="tau"><div class="tav">👩</div><div><div class="tan la">نورة السليمان</div><div class="tan le" style="display:none">Noura Al-Sulaiman</div><div class="talc la">جدة، السعودية</div><div class="talc le" style="display:none">Jeddah, Saudi Arabia</div></div></div></div>
+      <div class="tcd gc"><div class="tstr">⭐⭐⭐⭐⭐</div><p class="ttx la">"باعت بضاعتي في أسبوع واحد! لوحة التحكم للبائعين سهلة جداً، والدعم الفني ممتاز. الوصول لعملاء الخليج أصبح سهلاً."</p><p class="ttx le" style="display:none">"My products sold in just one week! The vendor dashboard is very easy and support is excellent. Reaching Gulf customers has become so simple."</p><div class="tau"><div class="tav">🧔</div><div><div class="tan la">محمد العتيبي</div><div class="tan le" style="display:none">Mohammed Al-Otaibi</div><div class="talc la">الدمام، السعودية</div><div class="talc le" style="display:none">Dammam, Saudi Arabia</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust reveal">
+  <div class="container">
+    <div class="trg">
+      <div class="tri"><div class="tric">🔒</div><h4 class="trt la">دفع آمن 100%</h4><h4 class="trt le" style="display:none">100% Secure Payment</h4><p class="trd la">تشفير SSL وامتثال PCI DSS</p><p class="trd le" style="display:none">SSL encryption & PCI DSS compliant</p></div>
+      <div class="tri"><div class="tric">🚚</div><h4 class="trt la">شحن سريع مضمون</h4><h4 class="trt le" style="display:none">Guaranteed Fast Shipping</h4><p class="trd la">التوصيل في الموعد أو استرداد المبلغ</p><p class="trd le" style="display:none">On-time delivery or full refund</p></div>
+      <div class="tri"><div class="tric">✅</div><h4 class="trt la">منتجات أصيلة مضمونة</h4><h4 class="trt le" style="display:none">Guaranteed Authentic</h4><p class="trd la">فحص دقيق لكل منتج قبل الشحن</p><p class="trd le" style="display:none">Every product inspected before shipping</p></div>
+      <div class="tri"><div class="tric">💬</div><h4 class="trt la">دعم عملاء 24/7</h4><h4 class="trt le" style="display:none">24/7 Customer Support</h4><p class="trd la">فريق دعم متاح على مدار الساعة</p><p class="trd le" style="display:none">Support team available around the clock</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SELL SECTION -->
+<section class="sell reveal" id="sell">
+  <div class="container">
+    <div class="sg">
+      <div>
+        <span class="stagi la">انضم كبائع</span><span class="stagi le" style="display:none">Join as Vendor</span>
+        <h2 class="st la" style="text-align:right">ابدأ رحلتك التجارية معنا</h2>
+        <h2 class="st le" style="display:none;text-align:left">Start Your Business Journey with Us</h2>
+        <p class="sd la" style="text-align:right;margin:0">انضم لأكثر من 2000 بائع ناجح — وصول فوري لملايين العملاء في السعودية والخليج</p>
+        <p class="sd le" style="display:none;text-align:left;margin:0">Join 2,000+ successful vendors — instant access to millions of customers in Saudi Arabia & the Gulf</p>
+        <div class="sbe">
+          <div class="sbi"><div class="sbc">✓</div><p class="sbtx la"><strong>صفر عمولة</strong> على أول 3 أشهر — ابدأ مجاناً وكبّر بثقة</p><p class="sbtx le" style="display:none"><strong>Zero commission</strong> for first 3 months — start free and grow confidently</p></div>
+          <div class="sbi"><div class="sbc">✓</div><p class="sbtx la"><strong>لوحة تحكم ذكية</strong> لإدارة المنتجات والطلبات والمخزون بسهولة</p><p class="sbtx le" style="display:none"><strong>Smart dashboard</strong> to manage products, orders & inventory with ease</p></div>
+          <div class="sbi"><div class="sbc">✓</div><p class="sbtx la"><strong>تسوية يومية</strong> للأرباح مباشرة لحسابك البنكي أو المحفظة</p><p class="sbtx le" style="display:none"><strong>Daily settlement</strong> of profits directly to your bank account or e-wallet</p></div>
+          <div class="sbi"><div class="sbc">✓</div><p class="sbtx la"><strong>دعم تسويقي بـ AI</strong> — نساعدك في الوصول لجمهورك المستهدف</p><p class="sbtx le" style="display:none"><strong>AI Marketing support</strong> — we help you reach your target audience</p></div>
+        </div>
+        <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap">
+          <button class="bp" onclick="openSellerModal()"><span class="la">ابدأ مجاناً الآن</span><span class="le" style="display:none">Start Free Now</span> →</button>
+          <a href="#" class="bs"><span class="la">اعرف المزيد</span><span class="le" style="display:none">Learn More</span></a>
+        </div>
+      </div>
+      <div class="sv">
+        <div class="ssc" style="grid-column:span 2"><div class="ssn">2,847</div><div class="ssl la">بائع نشط على المنصة الآن</div><div class="ssl le" style="display:none">Active vendors on the platform</div></div>
+        <div class="ssc"><div class="ssn">98%</div><div class="ssl la">رضا البائعين</div><div class="ssl le" style="display:none">Vendor satisfaction</div></div>
+        <div class="ssc"><div class="ssn">+15K</div><div class="ssl la">طلب يومي</div><div class="ssl le" style="display:none">Daily orders</div></div>
+        <div class="ssc"><div class="ssn">24h</div><div class="ssl la">وقت التسوية</div><div class="ssl le" style="display:none">Settlement time</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APP SECTION -->
+<section class="app reveal" id="app">
+  <div class="container">
+    <div class="ai">
+      <div>
+        <h2 class="att la">حمّل التطبيق<br/><span>واستمتع بتجربة</span> مميزة</h2>
+        <h2 class="att le" style="display:none">Download the App<br/>and enjoy a <span>premium</span> experience</h2>
+        <p class="adc la">أكثر من مليون عملية تسوق عبر تطبيقنا — عروض حصرية، تتبع الطلبات، ودفع بنقرة واحدة</p>
+        <p class="adc le" style="display:none">Over 1 million shopping transactions through our app — exclusive deals, order tracking, and one-tap payment</p>
+        <div class="abs">
+          <a href="#" class="ab"><span class="abic">🍎</span><div class="abt"><span class="absu la">متاح على</span><span class="absu le" style="display:none">Available on</span><span class="abnm">App Store</span></div></a>
+          <a href="#" class="ab"><span class="abic">🤖</span><div class="abt"><span class="absu la">متاح على</span><span class="absu le" style="display:none">Available on</span><span class="abnm">Google Play</span></div></a>
+        </div>
+      </div>
+      <div class="aphs">
+        <div class="aph" style="display:flex;align-items:center;justify-content:center;font-size:48px;background:linear-gradient(145deg,rgba(201,168,76,.15),rgba(201,168,76,.04))">📱</div>
+        <div class="aph" style="display:flex;align-items:center;justify-content:center;font-size:40px;background:linear-gradient(145deg,rgba(201,168,76,.12),rgba(201,168,76,.03))">🛒</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta reveal" id="contact">
+  <div class="container">
+    <div class="ci">
+      <div class="ctag la">🤝 تواصل معنا</div><div class="ctag le" style="display:none">🤝 Get in Touch</div>
+      <h2 class="ctti la">هل لديك مشروع؟<br/><span>دعنا نبنيه معاً</span></h2>
+      <h2 class="ctti le" style="display:none">Got a Project?<br/><span>Let's Build It Together</span></h2>
+      <p class="cdc la">نبني منصات تجارة إلكترونية عالمية المستوى — من الفكرة إلى الإطلاق الكامل بأعلى معايير الجودة والتقنية الحديثة</p>
+      <p class="cdc le" style="display:none">We build world-class e-commerce platforms — from concept to full launch with the highest standards of quality and modern technology</p>
+      <div class="cac">
+        <a href="https://moh222salah.github.io/cv" target="_blank" class="bpf"><span>💼</span><span class="la">شاهد البورتفوليو</span><span class="le" style="display:none">View Portfolio</span></a>
+        <a href="https://wa.me/201113903070" target="_blank" class="bwh"><span>💬</span><span class="la">تواصل عبر واتساب</span><span class="le" style="display:none">Chat on WhatsApp</span></a>
+      </div>
+      <div class="ccon">
+        <div class="cci">📧 <span>contact@fahdstore.sa</span></div>
+        <div class="cci">📞 <span dir="ltr">+966 5X XXX XXXX</span></div>
+        <div class="cci">📍 <span class="la">الرياض، المملكة العربية السعودية</span><span class="le" style="display:none">Riyadh, Saudi Arabia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="nl">
+    <div class="container">
+      <div class="nli2">
+        <div><div class="nlt la">اشترك في نشرتنا البريدية</div><div class="nlt le" style="display:none">Subscribe to Our Newsletter</div><div class="nls la">كن أول من يعلم بالعروض والمنتجات الجديدة</div><div class="nls le" style="display:none">Be first to know about deals & new products</div></div>
+        <div class="nlf"><input class="nlip la" type="email" placeholder="بريدك الإلكتروني..."/><input class="nlip le" type="email" placeholder="Your email address..." style="display:none"/><button class="bnl" onclick="showToast('✅','تم الاشتراك!','Subscribed!')"><span class="la">اشترك</span><span class="le" style="display:none">Subscribe</span></button></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="fg2">
+      <div>
+        <a class="flg" href="#"><div class="ne">ف</div><div class="nlt"><span class="nm la">فهد ستور</span><span class="nm le" style="display:none">Fahd Store</span><span class="ns">LUXURY E-COMMERCE</span></div></a>
+        <p class="fdc la">منصة التجارة الإلكترونية الخليجية الفاخرة — نجمع بين الجودة والفخامة والتقنية الحديثة لتجربة تسوق لا مثيل لها.</p>
+        <p class="fdc le" style="display:none">The Gulf's luxury e-commerce platform — combining quality, elegance & modern technology for an unparalleled shopping experience.</p>
+        <div class="fsc"><a class="fsb" href="#">𝕏</a><a class="fsb" href="#">📸</a><a class="fsb" href="#">🎵</a><a class="fsb" href="#">👻</a><a class="fsb" href="https://wa.me/201113903070">💬</a></div>
+      </div>
+      <div>
+        <div class="fct la">روابط سريعة</div><div class="fct le" style="display:none">Quick Links</div>
+        <ul class="fls"><li><a href="#home"><span class="la">الرئيسية</span><span class="le" style="display:none">Home</span></a></li><li><a href="#categories"><span class="la">الأقسام</span><span class="le" style="display:none">Categories</span></a></li><li><a href="#deals"><span class="la">العروض اليومية</span><span class="le" style="display:none">Daily Deals</span></a></li><li><a href="#vendors"><span class="la">البائعون</span><span class="le" style="display:none">Vendors</span></a></li><li><a href="#sell"><span class="la">ابدأ البيع</span><span class="le" style="display:none">Start Selling</span></a></li></ul>
+      </div>
+      <div>
+        <div class="fct la">خدمة العملاء</div><div class="fct le" style="display:none">Customer Service</div>
+        <ul class="fls"><li><a href="#"><span class="la">مركز المساعدة</span><span class="le" style="display:none">Help Center</span></a></li><li><a href="#"><span class="la">تتبع طلبك</span><span class="le" style="display:none">Track Order</span></a></li><li><a href="#"><span class="la">سياسة الإرجاع</span><span class="le" style="display:none">Return Policy</span></a></li><li><a href="#"><span class="la">ضمان الأصالة</span><span class="le" style="display:none">Authenticity Guarantee</span></a></li><li><a href="#"><span class="la">تواصل معنا</span><span class="le" style="display:none">Contact Us</span></a></li></ul>
+      </div>
+      <div>
+        <div class="fct la">معلومات قانونية</div><div class="fct le" style="display:none">Legal Info</div>
+        <ul class="fls"><li><a href="#"><span class="la">عن فهد ستور</span><span class="le" style="display:none">About Us</span></a></li><li><a href="#"><span class="la">الشروط والأحكام</span><span class="le" style="display:none">Terms & Conditions</span></a></li><li><a href="#"><span class="la">سياسة الخصوصية</span><span class="le" style="display:none">Privacy Policy</span></a></li><li><a href="#"><span class="la">برنامج الشركاء</span><span class="le" style="display:none">Affiliate Program</span></a></li></ul>
+      </div>
+    </div>
+    <div class="fb">
+      <p class="fcp la">© 2025 فهد ستور. جميع الحقوق محفوظة. مرخص من وزارة التجارة السعودية.</p>
+      <p class="fcp le" style="display:none">© 2025 <a href="#">Fahd Store</a>. All rights reserved. Licensed by Saudi Ministry of Commerce.</p>
+      <div class="fps"><span class="fpb">Mada</span><span class="fpb">Visa</span><span class="fpb">Mastercard</span><span class="fpb">STC Pay</span><span class="fpb">Apple Pay</span><span class="fpb">Tabby</span><span class="fpb">Tamara</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- CART SIDEBAR -->
+<div class="cov" id="cOvl" onclick="toggleCart()"></div>
+<div class="crt" id="cartSide">
+  <div class="crth"><span class="crtit la">عربة التسوق 🛒</span><span class="crtit le" style="display:none">Shopping Cart 🛒</span><div class="crcl" onclick="toggleCart()">✕</div></div>
+  <div class="cits">
+    <div class="cit"><div class="ciim">⌚</div><div class="ciin"><div class="cinm">Apple Watch Series 9</div><div class="cipr">899 SAR</div><div class="ciq"><div class="qb" onclick="changeQty(this,-1)">−</div><span class="qn">1</span><div class="qb" onclick="changeQty(this,1)">+</div></div></div></div>
+    <div class="cit"><div class="ciim">🎧</div><div class="ciin"><div class="cinm">AirPods Pro 2</div><div class="cipr">649 SAR</div><div class="ciq"><div class="qb" onclick="changeQty(this,-1)">−</div><span class="qn">2</span><div class="qb" onclick="changeQty(this,1)">+</div></div></div></div>
+    <div class="cit"><div class="ciim">👟</div><div class="ciin"><div class="cinm">Nike Air Max 2024</div><div class="cipr">399 SAR</div><div class="ciq"><div class="qb" onclick="changeQty(this,-1)">−</div><span class="qn">1</span><div class="qb" onclick="changeQty(this,1)">+</div></div></div></div>
+  </div>
+  <div class="crf"><div class="cto"><span class="ctol la">المجموع الكلي</span><span class="ctol le" style="display:none">Total</span><span class="ctoa">1,947 SAR</span></div><button class="bck" onclick="showToast('✅','تم إنشاء طلبك بنجاح!','Order placed successfully!')"><span class="la">إتمام الطلب →</span><span class="le" style="display:none">Checkout →</span></button></div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="mov" id="authMod">
+  <div class="mbx">
+    <div class="mcl" onclick="closeModal()">✕</div>
+    <div style="text-align:center;margin-bottom:28px"><div class="ne" style="margin:0 auto 12px;font-size:24px;width:52px;height:52px">ف</div><h3 style="color:var(--t1);font-size:18px" class="la">مرحباً بك في فهد ستور</h3><h3 style="color:var(--t1);font-size:18px" class="le" style="display:none">Welcome to Fahd Store</h3></div>
+    <div class="mts"><button class="mtb act" onclick="this.parentElement.querySelectorAll('.mtb').forEach(b=>b.classList.remove('act'));this.classList.add('act')"><span class="la">تسجيل دخول</span><span class="le" style="display:none">Sign In</span></button><button class="mtb" onclick="this.parentElement.querySelectorAll('.mtb').forEach(b=>b.classList.remove('act'));this.classList.add('act')"><span class="la">إنشاء حساب</span><span class="le" style="display:none">Register</span></button></div>
+    <div class="fg3"><label class="fl2 la">البريد الإلكتروني أو رقم الجوال</label><label class="fl2 le" style="display:none">Email or Mobile</label><input class="fi2 la" type="text" placeholder="example@email.com"/><input class="fi2 le" type="text" placeholder="example@email.com" style="display:none"/></div>
+    <div class="fg3"><label class="fl2 la">كلمة المرور</label><label class="fl2 le" style="display:none">Password</label><input class="fi2" type="password" placeholder="••••••••"/></div>
+    <button class="bp" style="width:100%;justify-content:center;margin-top:8px" onclick="showToast('✅','مرحباً بك!','Welcome back!');closeModal()"><span class="la">دخول →</span><span class="le" style="display:none">Sign In →</span></button>
+    <div class="dv"><span class="la">أو</span><span class="le" style="display:none">or</span></div>
+    <div class="slg"><button class="slb" onclick="showToast('🍎','جارٍ الدخول...','Signing in...')">🍎 Apple</button><button class="slb" onclick="showToast('🔵','جارٍ الدخول...','Signing in...')">🔵 Google</button></div>
+  </div>
+</div>
+
+<!-- SELLER MODAL -->
+<div class="smod" id="sellerMod">
+  <div class="smbx">
+    <div class="mcl" onclick="closeSellerModal()">✕</div>
+    <h3 style="color:var(--t1);font-size:22px;font-weight:800;margin-bottom:8px" class="la">انضم كبائع في فهد ستور 🚀</h3>
+    <h3 style="color:var(--t1);font-size:22px;font-weight:800;margin-bottom:8px" class="le" style="display:none">Join as Vendor on Fahd Store 🚀</h3>
+    <p style="font-size:13px;color:var(--t2);margin-bottom:24px" class="la">أكمل النموذج وسيتواصل معك فريقنا خلال 24 ساعة</p>
+    <p style="font-size:13px;color:var(--t2);margin-bottom:24px" class="le" style="display:none">Complete the form and our team will contact you within 24 hours</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+      <div class="fg3"><label class="fl2 la">الاسم الكامل</label><label class="fl2 le" style="display:none">Full Name</label><input class="fi2 la" type="text" placeholder="محمد..."/><input class="fi2 le" type="text" placeholder="Mohammed..." style="display:none"/></div>
+      <div class="fg3"><label class="fl2 la">رقم الجوال</label><label class="fl2 le" style="display:none">Mobile</label><input class="fi2" type="tel" placeholder="05XXXXXXXX"/></div>
+    </div>
+    <div class="fg3" style="margin-bottom:12px"><label class="fl2 la">البريد الإلكتروني</label><label class="fl2 le" style="display:none">Email</label><input class="fi2" type="email" placeholder="business@email.com"/></div>
+    <div class="fg3" style="margin-bottom:20px"><label class="fl2 la">نوع المنتجات</label><label class="fl2 le" style="display:none">Product Category</label><input class="fi2 la" type="text" placeholder="إلكترونيات، أزياء، منزل..."/><input class="fi2 le" type="text" placeholder="Electronics, Fashion, Home..." style="display:none"/></div>
+    <button class="bp" style="width:100%;justify-content:center" onclick="showToast('✅','تم إرسال طلبك! سنتواصل معك قريباً','Request sent! We will contact you soon');closeSellerModal()"><span class="la">إرسال الطلب →</span><span class="le" style="display:none">Submit Request →</span></button>
+  </div>
+</div>
+
+<div class="tw" id="tWrap"></div>
+<button class="btt" id="bttBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const browserLang = (navigator.language || 'ar').toLowerCase();
+let isAr = !browserLang.startsWith('en');
+let isDark = true;
+
+function applyLang() {
+  document.documentElement.lang = isAr ? 'ar' : 'en';
+  document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+  document.getElementById('lBtn').textContent = isAr ? 'EN' : 'ع';
+  document.querySelectorAll('.la').forEach(el => el.style.display = isAr ? '' : 'none');
+  document.querySelectorAll('.le').forEach(el => el.style.display = isAr ? 'none' : '');
+}
+function toggleLang() { isAr = !isAr; applyLang(); }
+applyLang();
+
+function toggleTheme() {
+  isDark = !isDark;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.getElementById('tBtn').textContent = isDark ? '🌙' : '☀️';
+}
+
+function hidePb() {
+  document.getElementById('pb').style.display = 'none';
+  document.getElementById('mainNav').style.top = '0';
+}
+
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('sc', window.scrollY > 50);
+  document.getElementById('bttBtn').classList.toggle('show', window.scrollY > 400);
+});
+
+function toggleMob() { document.getElementById('mMen').classList.toggle('op'); }
+function closeMob() { document.getElementById('mMen').classList.remove('op'); }
+function toggleSearch() { document.getElementById('sBar').classList.toggle('op'); }
+
+let cartCount = 3;
+function toggleCart() {
+  document.getElementById('cartSide').classList.toggle('op');
+  document.getElementById('cOvl').classList.toggle('op');
+}
+function addToCart() {
+  cartCount++;
+  document.getElementById('cBdg').textContent = cartCount;
+  showToast('🛒', 'تمت الإضافة للسلة!', 'Added to cart!');
+}
+function changeQty(btn, delta) {
+  const qn = btn.parentElement.querySelector('.qn');
+  let q = Math.max(1, parseInt(qn.textContent) + delta);
+  qn.textContent = q;
+}
+
+function openModal() { document.getElementById('authMod').classList.add('op'); }
+function closeModal() { document.getElementById('authMod').classList.remove('op'); }
+document.getElementById('authMod').addEventListener('click', function(e) { if(e.target===this) closeModal(); });
+
+function openSellerModal() { document.getElementById('sellerMod').classList.add('op'); }
+function closeSellerModal() { document.getElementById('sellerMod').classList.remove('op'); }
+document.getElementById('sellerMod').addEventListener('click', function(e) { if(e.target===this) closeSellerModal(); });
+
+function showToast(icon, arMsg, enMsg) {
+  const wrap = document.getElementById('tWrap');
+  const t = document.createElement('div');
+  t.className = 'tst';
+  t.innerHTML = icon + ' ' + (isAr ? arMsg : enMsg);
+  wrap.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; t.style.transition = 'opacity .5s'; setTimeout(() => t.remove(), 500); }, 3000);
+}
+
+let total = 4*3600 + 23*60 + 45;
+setInterval(() => {
+  total = Math.max(0, total - 1);
+  const h = Math.floor(total/3600), m = Math.floor((total%3600)/60), s = total%60;
+  document.getElementById('cdH').textContent = String(h).padStart(2,'0');
+  document.getElementById('cdM').textContent = String(m).padStart(2,'0');
+  document.getElementById('cdS').textContent = String(s).padStart(2,'0');
+}, 1000);
+
+const pt = document.getElementById('pt');
+for(let i=0;i<25;i++){
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.cssText = `left:${Math.random()*100}%;animation-duration:${10+Math.random()*20}s;animation-delay:-${Math.random()*20}s;--drift:${(Math.random()-.5)*200}px`;
+  pt.appendChild(p);
+}
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
